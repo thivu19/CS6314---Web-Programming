@@ -1,0 +1,31 @@
+code {
+    border-style: dashed;
+    border-color: brown;
+}
+
+p.myclass {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+}
+
+/*unvisited link*/
+a:link {
+    color: red;
+}
+
+/*mouse over link*/
+a:hover {
+    color: rgb(226, 43, 211);
+}
+
+/*visited link*/
+a:visited {
+    color: green;
+}
+
+/*selected link*/
+a:active {
+    color: blue;
+}

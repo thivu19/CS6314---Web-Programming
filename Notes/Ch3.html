@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Page</title>
+        <link rel="stylesheet" type="text/css" href="Ch3.css">
+    </head>
+    <style>
+        body {background-color: powderblue;}
+        .myclass {border-style: dotted solid;}
+        p.myclass {color:blueviolet;}
+        h1 {color: blue;}
+        p {color: red;}
+        #para1{color: yellow;}
+    </style>
+    <body>
+        <h1 class="myclass">CSS</h1>
+        <p class="myclass">
+            <b>selector</b>: points to the HTML element you want to style<br>
+            <b>Declaration</b>: block contains one or more declarations seperated by ;<br>
+        </p>
+        <p id="para1">
+            Inside a style tag<br>
+            Ex: <code>h1 {color: blue;}</code>
+        </p>
+
+        <h1>Another heading</h1>
+        <p>
+            The element selctor selects elements based on the element name.
+        </p>
+        <p>
+            The id of an element should be unique within a page
+            <br>Ex: <code>#para1</code>
+        </p>
+        <br>
+        <p>
+            The class attribute specifies one or more class names for an element
+            <br>Syntax: <code>element class="classname"</code>
+            <br>To select elements with a specific class, write a . character, followed by
+            the name of the class.
+        </p>
+        <br>
+        <p>
+            <b>Grouping Selectors</b>: elements with the same style definitions
+            an be group to together
+            <br>
+            <br>Ex:<code>
+                h1 {<br>
+                    text-align: center;<br>
+                    color: red; <br>
+                }<br>
+                p {<br>
+                    text-align: center;<br>
+                    color: red; <br>
+                }                
+            </code>
+            <br>Can be compined like this<br>
+            <code>
+                h1, p {<br>
+                text-align: center;<br>
+                color: red;<br>
+                }
+            </code>
+        </p>
+
+        <br>
+        <p>There is 3 type of CSS which can be either external, internal, and inline styles.
+            All the styles will "cascade" into a new "virtual" style sheet by: Inline, external
+            and internal, and last being browser default
+        </p>
+        
+        <br>
+        <p>
+            Colors in CSS are specified by
+            <ol>
+                <li>
+                    Valid color name: red
+                </li>
+                <li>
+                    RGB: (255,255,255)
+                </li>
+                <li>
+                    Hexadecimal Colors: #FF0000
+                </li>
+            </ol>
+        </p>
+        
+        <br>
+        <p>
+            <h3>Boarder</h3>
+            ➢ dotted - Defines a dotted border
+➢ dashed - Defines a dashed border
+➢ solid - Defines a solid border
+➢ double - Defines a double border
+➢ groove - Defines a 3D grooved border. The effect depends on the
+border-color value
+➢ ridge - Defines a 3D ridged border. The effect depends on the
+border-color value
+➢ inset - Defines a 3D inset border. The effect depends on the bordercolor value
+➢ outset - Defines a 3D outset border. The effect depends on the
+border-color value
+➢ none - Defines no border
+➢ hidden - Defines a hidden border 
+        </p>
+
+        <br>
+        <p>
+            <h3>Margins</h3>
+            Generate space around elements
+        </p>
+
+        <br>
+        <p>
+            <h3>Height and Width</h3>
+            Used to set the height and width of an element.
+            <br>Example:<br>
+            <code>
+                div {<br>
+                    height: 200px;<br>
+                    width: 50%<br>
+                }
+            </code>
+        </p>
+
+        <br><p>
+            <h3>Fonts</h3>
+            Is set with the font-family property.<br>
+            Example:<br>
+            <code>
+                p {<br>
+                   font-family: "Times New Roman", Times, serif;  
+                }
+            </code>
+        </p> 
+
+        <a href="http://www.google.com">Google</a> <br>
+        <a href="http://www.yahoo.com">Yahoo</a> <br> 
+
+        <p>
+            <h3>Tables - Border, Width, Height, and Text-Align</h3>
+            To specify table borders in CSS, use the border property. Can also define
+            by the width and height properties. As well as, text alignment.
+        </p>
+    </body>
+</html>
