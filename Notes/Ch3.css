@@ -29,3 +29,19 @@ a:visited {
 a:active {
     color: blue;
 }
+
+/*background styling*/
+body {
+    background-color: powderblue;
+    background-image: url("dog.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-attachment*/
+    /*background*/
+}
+
+div {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 0.5em;
+}
