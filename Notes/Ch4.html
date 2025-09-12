@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript: Client-Side Scripting</title>
+    <link rel="stylesheet" type="text/css" href="Ch4.css">
+</head>
+
+<body>
+    <div>
+        <h1>What is JavaScript?</h1>
+        <p>
+            Use to make a static page dynamic.
+        </p>
+        <ol>
+            <li>Get html file from the web server</li>
+            <li>Send back html</li>
+            <li>Execute any JS as required</li>
+            <li>Browser can layout and display the page to the user</li>
+        </ol>
+    </div>
+    <div>
+        <h1>What Can JavaScript Do?</h1>
+        <p id="demo1">JavaScript can change HTML content.</p>
+        <button type="button" onclick="document.getElementById('demo1').innerHTML= 'Hello JavaScript!'">Click
+            Me!</button>
+    </div>
+    <div>
+        <h1>JavaScript Can Change Images</h1>
+        <img id="myImage" onclick="changeImage()" src="apple.jpeg" width="200" height="200">
+        <p>Click the apple to swtich to a banana. Vise versa.</p>
+        <script>
+            function changeImage() {
+                var image = document.getElementById('myImage');
+                if (image.src.match("banana")) {
+                    image.src = "apple.jpeg";
+                } else {
+                    image.src = "banana.jpg";
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <h1>JS Can Change Style</h1>
+        <p id="demo3">JavaScript can change the style of an HTML element.</p>
+        <button type="button" onclick="document.getElementById('demo3').style.fontSize='35px'">Click Me!</button>
+    </div>
+    <div>
+        <h1>JavaScript Can Validate Input</h1>
+        <p>Please input a number between 1 and 10:</p>
+        <input id="numb" type="number">
+        <button type="button" onclick="myFunction()">Submit</button>
+        <p id="demo4"></p>
+        <script>
+            function myFunction() {
+                var x, text;
+                // Get the value of the input field with id="numb"
+                x = document.getElementById("numb").value;
+                // If x is Not a Number or less than one or greater than 10
+                if (isNaN(x) || x < 1 || x > 10) {
+                    text = "Input not valid";
+                } else {
+                    text = "Input is valid";
+                }
+                document.getElementById("demo4").innerHTML = text;
+            }
+        </script>
+    </div>
+    <div>
+        <h1>Where does JS go?</h1>
+        <p>
+            JS can be linked to an HTML page in a number of ways.
+        <ul>
+            <li>Inline<br>
+                - the practice of including JS code directly w/in certain HTML attributes (not rec cuz hard to maintain)
+            </li>
+            <li>Embedded<br>
+                - the practice of place JS code w/in a script element
+            </li>
+            <li>External<br>
+                - the JS code is in a seperate external file that html can access (access by .js)
+            </li>
+        </ul>
+        </p>
+    </div>
+    <div>
+        <h1>JavaScript Syntax</h1>
+        <p>
+            Some fundamental syntax:
+        <ul>
+            <li>Variables<br>
+                - are dynamically typed, so we don't have to declare often
+            </li>
+            <li>Assignment</li>
+            <li>Conditionals</li>
+            <li>Loops</li>
+            <li>Arrays</li>
+        </ul>
+        </p>
+    </div>
+    <div>
+        <h1>Functions</h1>
+        <p>
+            Since JS is dynamically typed, functions don't require a return type, nor do the parameters require type
+        </p>
+    </div>
+    <div>
+        <h1>Alert</h1>
+        <p>alert() function makes the browser show a pop-up to the user</p>
+        <p>Click the button to display an alert box.</p>
+        <button onclick="myFunction()">Try it</button>
+        <script>
+            function myFunction() {
+                alert("Hello! I am an alert box!");
+            }
+        </script>
+    </div>
+    <div>
+        <h1>Errors using try and catch</h1>
+        <p>
+            <ul>
+                <li>The <strong>try</strong> statement lets you <strong>test a block of code for errors</strong></li>
+                <li>The <strong>catch</strong> statment lets you <strong>handle the error</strong></li>
+                <li>The <strong>throw</strong> statment lets you <strong>create custom errors</strong></li>
+            </ul>
+        </p>
+    </div>
+</body>
+
+</html>
