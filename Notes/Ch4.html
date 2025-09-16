@@ -118,11 +118,127 @@
     <div>
         <h1>Errors using try and catch</h1>
         <p>
-            <ul>
-                <li>The <strong>try</strong> statement lets you <strong>test a block of code for errors</strong></li>
-                <li>The <strong>catch</strong> statment lets you <strong>handle the error</strong></li>
-                <li>The <strong>throw</strong> statment lets you <strong>create custom errors</strong></li>
-            </ul>
+        <ul>
+            <li>The <strong>try</strong> statement lets you <strong>test a block of code for errors</strong></li>
+            <li>The <strong>catch</strong> statment lets you <strong>handle the error</strong></li>
+            <li>The <strong>throw</strong> statment lets you <strong>create custom errors</strong></li>
+        </ul>
+        </p>
+    </div>
+    <diV>
+        <h1>JS Objects</h1>
+        <p>
+            Almost everything in the language is an obj. Obj in JS are prototype-based rather than class-based.
+            Prototype base language: INheritance in which obj are inherited directly from other objs. It also does
+            not use classes.
+        </p>
+        <p id="demo5"></p>
+        <script>
+            // Define and create a single object, using an object literal.
+            // var person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+
+            // Define and create a single object, with the keyword new
+            // Create an Object
+            const person = new Object({
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue"
+            });
+
+            // Diplay Object Content
+            document.getElementById("demo5").innerHTML =
+                person.firstName + " is " + person.age + " years old.";
+        </script>
+    </diV>
+    <div>
+        <h1>JS Obj Methods</h1>
+        <p>
+            JavaScript methods are actions that can be performed on objects
+        </p>
+        <p id="demo6"></p>
+
+        <script>
+            // Create an object:
+            const person1 = {
+                firstName: "John",
+                lastName: "Doe",
+                id: 5566,
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+
+            // Display data from the object:
+            document.getElementById("demo6").innerHTML = person1.fullName();
+        </script>
+        <p>
+            Using Built-In Methods
+        </p>
+        <p id="demo7"></p>
+        <script>
+            var message = "Hello world!";
+            var x = message.toUpperCase();
+
+            // Display data from the object:
+            document.getElementById("demo7").innerHTML = x;
+        </script>
+    </div>
+    <hr>
+    <div>
+        <h1>Arrays</h1>
+        <p>
+        <ul>
+            <li>The <strong>push()</strong> add an item to the end of an existing array</li>
+            <li>The <strong>pop()</strong> method can be used to remove the last element of an array</li>
+            <li>The <strong>valueOf()</strong> method returns an array as a sting</li>
+            <li>The <strong>join()</strong> method also joins all array elements into a string</li>
+            <li>The <strong>shift()</strong> method removes the first element of an array, and "shifts" all other
+                elements one place down</li>
+            <li>The <strong>unshift()</strong> method adds a new element to an array (at the beginning)</li>
+            <li>The <strong>slice()</strong> method returns the selected elements in an array, as a new array obj</li>
+            <li>The <strong>splice()</strong> method adds/removes items to/from an array, and returns the removed
+                item(s)</li>
+            <li>The <strong>reverse()</strong> method reverses the order of the elements in an array</li>
+            <li>The <strong>sort()</strong> method sorts the items of an array. Alphabetical & ascending order</li>
+            <li>The <strong>lastIndexOf()</strong> mthod searches the array for the specified item, and returns its
+                position</li>
+        </ul>
+        </p>
+
+        <p>push() adds new items to the end of an array:</p>
+        <p id="demo8"></p>
+        <script>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.push("Kiwi");
+
+            document.getElementById("demo8").innerHTML = fruits;
+        </script>
+
+        <p>Click the button to sort the array in ascending order</p>
+        <button onclick="sortArray()">Try it</button>
+        <p id="demo9"></p>
+        <script>
+            var points = [40, 100, 1, 5, 25, 10];
+            document.getElementById("demo9").innerHTML = points;
+
+            function sortArray() {
+                points.sort(function (a, b) { return a - b });
+                document.getElementById("demo9").innerHTML = points;
+            }
+        </script>
+    </div>
+    <hr>
+    <div>
+        <h1>JS Math Obj</h1>
+        <p>
+            The JS Math obj allows us to perform mathematical tasks on numbers
+            <br>
+            The static class contains methods such as max(), min(), pow(), sqrt(), and exp(),
+            and trigonometric functions such as sin(), cos(), and arctan()
+            <br>
+            Many mathematical constants are defined such as PI, E, SQRT2, and
+            some others
         </p>
     </div>
 </body>

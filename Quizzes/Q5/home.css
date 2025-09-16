@@ -28,7 +28,7 @@
 
 /*Style header*/
 .header {
-    background-color: rgb(227, 239, 237);
+    background-color: #f1f1f1;
     padding: 20px;
     text-align: center;
 }
@@ -37,19 +37,73 @@
 .column.side {
     width: 25%;
     float: left;
-    background-color: rgb(225, 208, 187);
+    background-color: bisque;
 }
 
 /*Middle column*/
 .column.middle {
     width: 50%;
     float: left;
-    background-color:rgb(178, 221, 223);
+    background-color:cadetblue;
 }
 
 /*Footer*/
 .footer {
-    background-color: rgb(227, 239, 237);
+    background-color: rgb(200, 250, 242);
     padding: 20px;
     clear: both;
+}
+
+h5.mylist {
+    color: rgb(0, 0, 146);
+}
+
+#Nick {
+    color: rgb(0, 101, 160);
+    text-align: center;
+}
+
+#Thi {
+    color: rgb(160, 59, 0);
+    text-align: center;
+}
+
+#Chang {
+    color: blueviolet;
+    text-align: center;
+}
+
+#banana {
+    height: 250px;
+    width: 400px;
+}
+
+dt {
+    color: orange
+}
+
+#gif {
+    background-image: url("vesuvius-baby-baby.gif");
+    height: 150px;
+    width: 150px;
+}
+
+/* unvisited link */
+a:link {
+    color: blue;
+}
+
+/* visited link */
+a:visited {
+    color: orangered;
+}
+
+/* mouse over link */
+a:hover {
+    color: green;
+}
+
+/* selected link */
+a:active {
+    color: hotpink;
 }
