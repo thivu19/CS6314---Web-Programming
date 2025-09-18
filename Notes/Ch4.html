@@ -241,6 +241,44 @@
             some others
         </p>
     </div>
+    <diV>
+        <h1>JavaScript Strings</h1>
+
+        <p id="demo10"></p>
+
+        <script>
+            // x is a string
+            let x = "John";
+
+            // y is an object
+            let y = new String("John");
+
+            document.getElementById("demo10").innerHTML =
+                typeof x + "<br>" + typeof y;
+        </script>
+
+        <p>
+        <ul>
+            <li>When using the == operator, equal strings are equal</li>
+            <li>When using the === operator, equal strings are not equal, because the === operator expects equality in both type and value</li>
+            <li>The length property returns the length of a string</li>
+            <li><strong>localeCompare()</strong> compares two strings in the current locale</li>
+            <li><strong>match()</strong> searches a string for a match against a regular expression, and returns the matches</li>
+            <li><strong>replace()</strong> searches a string for a value and returns a new string with the value replaced</li>
+            <li><strong>search()</strong> searches a string for a value and returns the position of the match</li>
+            <li><strong>split()</strong> splits a string into an array of substrings</li>
+            <li><strong>substr()</strong> extracts a part of a string from a start position through a number of characters</li>
+            <li><strong>substring()</strong> extracts a part of a string between two specified positions</li>
+            <li><strong>toLocaleLowerCase()</strong> converts a string to lowercase letters, according to the host's locale</li>
+            <li><strong>toLocaleUpperCase()</strong> converts a string to uppercase letters, according to the host's locale</li>
+            <li><strong>toLowerCase()</strong> converts a string to lowercase letters</li>
+            <li><strong>toString()</strong> returns the value of a String object</li>
+            <li><strong>toUpperCase()</strong> converts a string to uppercase letters</li>
+            <li><strong>trim()</strong> removes whitespace from both ends of a string</li>
+            <li><strong>valueOf()</strong> returns the primitive value of a String object</li>
+        </ul>
+        </p>
+    </diV>
 </body>
 
 </html>

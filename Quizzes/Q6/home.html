@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title Page</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script type="text/JavaScript" src="home.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Quiz 5</h1>
+    </div>
+
+    <div class="row">
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2>Left Side</h2>
+        </div>
+        <div class="column middle">
+            <h2>Main Content:</h2>
+            <p>
+                This is my first homepage. <em>Hopefully</em> it's correct.
+            </p>
+            <p id="H"><abbr title="Hydrogen">H</abbr> element.</p>
+
+            <h2>Gif Background:</h2>
+            <div id="gif"></div>
+
+            <h2>Lists:</h2>
+            <h5 class="mylist">Ordered List</h5>
+            <ol>
+                <li>1:00</li>
+                <li>2:00</li>
+                <li>3:00</li>
+            </ol>
+
+            <h5 class="mylist">Unordered List</h5>
+            <ul>
+                <li>Apple</li>
+                <li>Banna</li>
+            </ul>
+
+            <h2>Inputs:</h2>
+            <input type="radio" name="color" value="red">
+            <label style="color:red">Red</label>
+            <input type="radio" name="color" value="blue">
+            <label style="color:blue">Blue</label>
+            <br>
+            <input type="submit" id="colorsub">
+
+            <br>
+            <H2>Dictionary:</H2>
+            <dl class="mydict">
+                <dt>hero</dt>
+                <dd>a person who is admired or idealized for courage, outstanding achievements, or noble qualities.</dd>
+            </dl>
+
+            <h2>Table:</h2>
+            <table border=1>
+                <tr>
+                    <th>Month</th>
+                    <th>Checking</th>
+                </tr>
+                <tr>
+                    <td>March</td>
+                    <td>$1000</td>
+                </tr>
+            </table>
+
+            <h2>Link</h2>
+            <a href="https://www.google.com">Google</a>
+            <br>
+            <h2>Image:</h2>
+            <img src="Banana.jpg" alt="Banana" id="banana" />
+
+            <div>
+                <h3>Contact Form</h3>
+                <form>
+                    First name:<br>
+                    <input id="firstname" type="text" name="firstname"><br>
+                    Last name:<br>
+                    <input id="lastname" type="text" name="lastname"><br>
+                    Age:<br>
+                    <input id="age" type="number" name="age"><br>
+                    Email:<br>
+                    <input id="email" type="text" name="email"><br><br>
+                    <button type="button" onclick="validateInfo()">Submit</button>
+                </form>
+                <p id="contactInfo"></p>
+            </div>
+
+            <div>
+                <h3>Quiz5</h3>
+                <p>push() method</p>
+                <p id="push"></p>
+                <p>reverse() method</p>
+                <p id="reverse"></p>
+                <p>sort() method</p>
+                <p id="sort"></p>
+                <p>splice() method</p>
+                <p id="splice"></p>
+                <p>pop() method</p>
+                <p id="pop"></p>
+
+                <script>
+                    const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+                    fruits.push("Strawberry");
+                    document.getElementById("push").innerHTML = fruits;
+
+                    fruits.reverse();
+                    document.getElementById("reverse").innerHTML = fruits;
+
+                    fruits.sort();
+                    document.getElementById("sort").innerHTML = fruits;
+
+                    fruits.splice(0, 1);
+                    document.getElementById("splice").innerHTML = fruits;
+
+                    fruits.pop();
+                    document.getElementById("pop").innerHTML = fruits;
+                </script>
+            </div>
+        </div>
+        <div class="column side">
+            <h2> Right Side</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer">
+            <h2>Footer</h2>
+            <h2 id="Thi">Thi Vu, TAV180002</h2>
+            <h2 id="Nick">Nicholas Aminzadeh, NHA190001</h2>
+            <h2 id="Chang">Changhui Sun, CXS240024</h2>
+        </div>
+    </div>
+</body>
+
+</html>
