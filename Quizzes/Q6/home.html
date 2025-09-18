@@ -129,6 +129,34 @@
                     document.getElementById("pop").innerHTML = fruits;
                 </script>
             </div>
+            <div>
+                <h3>Quiz6</h3>
+
+                <p>replace() method</p>
+                <p id="replaceI"></p>
+                <p>toLocaleLowerCase() method</p>
+                <p id="replaceL"></p>
+                <p>toLocaleUpperCase() method</p>
+                <p id="replaceU"></p>
+                <p>substr() method</p>
+                <p id="replaceS"></p>
+                <p>g expression</p>
+                <p id="gProblem"></p>
+
+                <script>
+                    var text = "Banana is a fruit.";
+                    document.getElementById("replaceI").innerHTML = text.replace(/banana/i, "Apple");
+                    document.getElementById("replaceL").innerHTML = text.toLocaleLowerCase();
+                    document.getElementById("replaceU").innerHTML = text.toLocaleUpperCase();
+                    document.getElementById("replaceS").innerHTML = text.substr(2);
+                    
+                    let textPattern = "Brackets are used to find a range of characters!";
+                    const pattern = /ra*/g;
+                    let resultPattern = textPattern.match(pattern);
+
+                    document.getElementById("gProblem").innerHTML = resultPattern;
+                </script>
+            </div>
         </div>
         <div class="column side">
             <h2> Right Side</h2>

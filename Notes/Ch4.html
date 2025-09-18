@@ -260,17 +260,23 @@
         <p>
         <ul>
             <li>When using the == operator, equal strings are equal</li>
-            <li>When using the === operator, equal strings are not equal, because the === operator expects equality in both type and value</li>
+            <li>When using the === operator, equal strings are not equal, because the === operator expects equality in
+                both type and value</li>
             <li>The length property returns the length of a string</li>
             <li><strong>localeCompare()</strong> compares two strings in the current locale</li>
-            <li><strong>match()</strong> searches a string for a match against a regular expression, and returns the matches</li>
-            <li><strong>replace()</strong> searches a string for a value and returns a new string with the value replaced</li>
+            <li><strong>match()</strong> searches a string for a match against a regular expression, and returns the
+                matches</li>
+            <li><strong>replace()</strong> searches a string for a value and returns a new string with the value
+                replaced</li>
             <li><strong>search()</strong> searches a string for a value and returns the position of the match</li>
             <li><strong>split()</strong> splits a string into an array of substrings</li>
-            <li><strong>substr()</strong> extracts a part of a string from a start position through a number of characters</li>
+            <li><strong>substr()</strong> extracts a part of a string from a start position through a number of
+                characters</li>
             <li><strong>substring()</strong> extracts a part of a string between two specified positions</li>
-            <li><strong>toLocaleLowerCase()</strong> converts a string to lowercase letters, according to the host's locale</li>
-            <li><strong>toLocaleUpperCase()</strong> converts a string to uppercase letters, according to the host's locale</li>
+            <li><strong>toLocaleLowerCase()</strong> converts a string to lowercase letters, according to the host's
+                locale</li>
+            <li><strong>toLocaleUpperCase()</strong> converts a string to uppercase letters, according to the host's
+                locale</li>
             <li><strong>toLowerCase()</strong> converts a string to lowercase letters</li>
             <li><strong>toString()</strong> returns the value of a String object</li>
             <li><strong>toUpperCase()</strong> converts a string to uppercase letters</li>
@@ -278,7 +284,96 @@
             <li><strong>valueOf()</strong> returns the primitive value of a String object</li>
         </ul>
         </p>
+
+        <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo11">Please visit Microsoft at Microsoft!</p>
+
+        <script>
+            function myFunction() {
+                let text = document.getElementById("demo11").innerHTML;
+                document.getElementById("demo11").innerHTML =
+                    text.replace(/microsoft/i, "W3Schools");
+            }
+        </script>
     </diV>
+    <div>
+        <h1>JS Regular Expression</h1>
+        <p>
+        <ul>
+            <li>i: perform case-insensitive matching</li>
+            <li>g: perform a global match (find all matches rather than stopping after the first match)</li>
+            <li>m: perform multiline matching (not case sensitive)</li>
+        </ul>
+        </p>
+        <p>
+            Brackets are used to find a range of characters:
+        <ul>
+            <li>[abc]: Find any of the characters between the brackets</li>
+            <li>[0-9]: Find any of the digits between the brackets</li>
+            <li>(x|y): Find any of the alternatives seperated with |</li>
+        </ul>
+        </p>
+
+        <h2>Character Classes [abc]</h2>
+
+        <p>A global search for the character "h" in a string:</p>
+
+        <p id="demo12"></p>
+
+        <script>
+            let text = "Is this all there is?";
+            let result = text.match(/[h]/g);
+
+            document.getElementById("demo12").innerHTML = result;
+        </script>
+
+        <h2>RexExp Alteration (OR)</h2>
+        <p>A global search for "red" or "green" or "blue":</p>
+
+        <p id="demo13"></p>
+
+        <script>
+            let color = "Black, white, red, green, blue, yellow.";
+            let colorRes = color.match(/red|green|blue/g);
+
+            document.getElementById("demo13").innerHTML = colorRes;
+        </script>
+        <p>
+            <strong>Metacharacters</strong> are characters with a special meaning:
+        <ul>
+            <li>\d: find a digit</li>
+            <li>\s: find a whitespace character</li>
+            <li>\b: find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+            </li>
+            <li>\uxxxx: find the Unicode character specified by the hexadecimal number xxxx</li>
+        </ul>
+        </p>
+        <p>
+            <strong>Quantifiers</strong> define quanties
+        <ul>
+            <li>n+: matches any string that contains at least one n</li>
+            <li>n*: matches any string that contains zero or more occurrences of n</li>
+            <li>n?: matches any string that contains zero or one occurrences of n</li>
+        </ul>
+        </p>
+        <h2>The * Quantifier</h2>
+
+        <p>A global search for an "l", followed by zero or more "o" characters:</p>
+
+        <p id="demo14"></p>
+
+        <script>
+            let textPattern = "Hellooo World! Hello W3Schools!";
+            const pattern = /lo*/g;
+
+            let resultPattern = textPattern.match(pattern);
+
+            document.getElementById("demo14").innerHTML = resultPattern;
+        </script>
+    </div>
 </body>
 
 </html>
