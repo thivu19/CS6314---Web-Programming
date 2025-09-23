@@ -374,6 +374,170 @@
             document.getElementById("demo14").innerHTML = resultPattern;
         </script>
     </div>
+    <div>
+        <h2>Date</h2>
+        <p>
+            The Date obj is used to work with dates and times.
+            new Date() creates a new date object with the current date and time:
+        </p>
+        <p id="demo15"></p>
+        <script>
+            const time = new Date();
+            // var d = new Date(millisecond);
+            // var d = new Date(dateString);
+            // var d = new Date(year, month, day, hours, minutes, seonds, milliseconds);
+            document.getElementById("demo15").innerHTML = time;
+        </script>
+
+        <p>
+        <ul>
+            <li>getDate(): Returns the day of the month (from 1-31)</li>
+            <li>getDay(): Returns the day of the week (from 0-6)</li>
+            <li>getFullYear(): Returns the year</li>
+            <li>getHOurs(): Returns the hour (from 0-23)</li>
+            <li>getMilliseconds(): Returns the milliseconds (from 0-999)</li>
+            <li>getMinutes(): Returns the minutes (from 0-59)</li>
+            <li>getMonth(): Returns the month (from 0-11)</li>
+            <li>getSeconds(): Returns the seconds (from 0-59)</li>
+            <li>getTime(): Returns the number of milliseconds since midnight Jan 1 1970, and a specified date</li>
+            <li>getTimezoneOffset() Returns the time difference between UTC time and local time, in minutes</li>
+            <li>getUTCDate() Returns the day of the month, according to universal time (from 1-31)</li>
+            <li>getUTCDay() Returns the day of the week, according to universal time (from 0-6)</li>
+            <li>getUTCFullYear() Returns the year, according to universal time</li>
+            <li>getUTCHours() Returns the hour, according to universal time (from 0-23)</li>
+            <li>getUTCMilliseconds() Returns the milliseconds, according to universal time (from 0-999)</li>
+            <li>getUTCMinutes() Returns the minutes, according to universal time (from 0-59)</li>
+            <li>getUTCMonth() Returns the month, according to universal time (from 0-11)</li>
+            <li>getUTCSeconds() Returns the seconds, according to universal time (from 0-59)</li>
+        </ul>
+        </p>
+        <p> The UTC is the time set by the World Time Standard</p>
+        <p>
+        <ul>
+            <li>toDateString() Converts the date portion of a Date object into a readable string</li>
+            <li>toISOString() Returns the date as a string, using the ISO standard</li>
+            <li>toJSON() Returns the date as a string, formatted as a JSON date</li>
+            <li>toLocaleDateString() Returns the date portion of a Date object as a string, using locale conventions
+            </li>
+            <li>toLocaleTimeString() Returns the time portion of a Date object as a string, using locale conventions
+            </li>
+            <li>toLocaleString() Converts a Date object to a string, using locale conventions</li>
+            <li>toString() Converts a Date object to a string</li>
+            <li>toTimeString() Converts the time portion of a Date object to a string</li>
+            <li>toUTCString() Converts a Date object to a string, according to universal time</li>
+            <li>UTC() Returns the number of milliseconds in a date since midnight of January 1, 1970, according to UTC
+                time</li>
+            <li>valueOf() Returns the primitive value of a Date object</li>
+        </ul>
+        </p>
+        <h3>The HTML DOM (DOcument Object Model)</h3>
+        <p>
+            With the object model, JavaScript gets all the power it needs to create
+            dynamic HTML:<br>
+            • JavaScript can change all the HTML elements in the page<br>
+            • JavaScript can change all the HTML attributes in the page<br>
+            • JavaScript can change all the CSS styles in the page<br>
+            • JavaScript can remove existing HTML elements and attributes<br>
+            • JavaScript can add new HTML elements and attributes<br>
+            • JavaScript can react to all existing HTML events in the page<br>
+            • JavaScript can create new HTML events in the page<br>
+        </p>
+        <hr>
+        <h3>The DOM</h3>
+        <p>
+            Is a W3C (World WIde Web Consortium) standard. Defines a standard for accessing documents:
+        <blockquote>
+            The W3C Document Object Model (DOM) is a platform and languageneutral interface that allows programs and
+            scripts to dynamically access and update the content, structure, and style of a document.
+        </blockquote>
+        The W3C DOM standard is separated into 3 different parts:<br>
+        • Core DOM - standard model for all document types<br>
+        • XML DOM - standard model for XML documents<br>
+        • HTML DOM - standard model for HTML documents<br>
+        </p>
+        <p>
+            The HTML DOM is standard object model and programming interface for HTML. It defines:<br>
+            • The HTML elements as objects<br>
+            • The properties of all HTML elements<br>
+            • The methods to access all HTML elements<br>
+            • The events for all HTML elements<br><br>
+            In other words: The HTML DOM is a standard for how to
+            access, change, add, or delete HTML elements.
+        </p>
+        <h3>JS - HTML DOM Methods</h3>
+        <p>
+            • HTML DOM methods are actions you can perform (on HTML Elements).<br>
+            • HTML DOM properties are values (of HTML Elements) that you can set or
+            change.<br><br>
+            • The DOM Programming Interface<br>
+            <hr>
+            • The HTML DOM can be accessed with JavaScript (and with other
+            programming languages).<br>
+            • In the DOM, all HTML elements are defined as objects.<br>
+            • The programming interface is the properties and methods of each object.<br>
+            • A property is a value that you can get or set (like changing the content of
+            an HTML element).<br>
+            • A method is an action you can do (like add or deleting an HTML element).<br>
+        </p>
+        <h2>JavaScript HTML DOM</h2>
+
+        <p id="intro">Finding HTML Elements by Id</p>
+        <p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+        <p id="demo16"></p>
+
+        <script>
+            const element = document.getElementById("intro");
+
+            document.getElementById("demo16").innerHTML =
+                "The text from the intro paragraph is: " + element.innerHTML;
+
+        </script>
+        <hr>
+        <div id="main">
+            <p>Finding HTML Elements by Tag Name</p>
+            <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        </div>
+
+        <p id="demo17"></p>
+
+        <script>
+            const x = document.getElementById("main");
+            const y1 = x.getElementsByTagName("p");
+
+            document.getElementById("demo17").innerHTML =
+                'The first paragraph (index 0) inside "main" is: ' + y1[0].innerHTML;
+
+        </script>
+        <hr>
+        <p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+        <form id="frm1" action="/action_page.php">
+            First name: <input type="text" name="fname" value="Donald"><br>
+            Last name: <input type="text" name="lname" value="Duck"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>These are the values of each element in the form:</p>
+        <p id="demo18"></p>
+
+        <script>
+            const x = document.forms["frm1"];
+            let text1 = "";
+            for (let i = 0; i < x.length; i++) {
+                text1 += x.elements[i].value + "<br>";
+            }
+            document.getElementById("demo18").innerHTML = text1;
+        </script>
+        <hr>
+        <img id="image" src="banana.jpg" width="160" height="120">
+
+        <script>
+            document.getElementById("image").src = "dog.jpeg";
+        </script>
+
+        <p>The original image was banana.jpg, but the script changed it to dog.jpeg</p>
+    </div>
 </body>
 
 </html>
