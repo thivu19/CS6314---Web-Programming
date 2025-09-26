@@ -9,16 +9,20 @@
 
 <body id="body">
     <h3>Banana</h3>
-    <a id="a1" href="https://www.google.com/">Google</a>
-    <span id="sp1" style="color:blue;">Hello World</span>
-    <img id="img1" src="Banana.jpg" alt="Banana">
+    <div id="d1">
+        <a id="a1" href="https://www.google.com/">Google</a>
+        <span id="sp1" style="color:blue;">Hello World</span>
+    </div>
+
 
     <p id="id1"></p>
     <p id="id2"></p>
+    <p id="id8"></p>
     <p id="id3"></p>
     <p id="id4"></p>
     <p id="id5"></p>
     <p id="id6"></p>
+    <p id="id7"></p>
 
     <script>
         // Body node
@@ -32,36 +36,50 @@
         var h3Node = document.querySelector("h3");
         document.getElementById("id2").innerHTML =
             "NodeName: " + h3Node.nodeName +
-            " | NodeValue: " + h3Node.firstChild.nodeValue +
+            " | NodeValue: " + h3Node.nodeValue +
             " | NodeType: " + h3Node.nodeType;
 
-        // Anchor node
-        var aNode = document.getElementById("a1");
+        // H3 node child
+        var h3Child = h3Node.firstChild;
+        document.getElementById("id8").innerHTML =
+            "NodeName: " + h3Child.nodeName +
+            " | NodeValue: " + h3Child.nodeValue +
+            " | NodeType: " + h3Child.nodeType;
+
+        // Div node
+        var divNode = document.querySelector("div");
         document.getElementById("id3").innerHTML =
+            "NodeName: " + divNode.nodeName +
+            " | NodeValue: " + divNode.firstChild.nodeValue +
+            " | NodeType: " + divNode.nodeType;
+
+        // Anchor node
+        var aNode = divNode.childNodes[1];
+        document.getElementById("id4").innerHTML =
             "NodeName: " + aNode.nodeName +
             " | NodeValue: " + aNode.nodeValue +
             " | NodeType: " + aNode.nodeType;
 
+        // Anchor node child
+        var aChild = aNode.childNodes[0];
+        document.getElementById("id5").innerHTML =
+            "NodeName: " + aChild.nodeName +
+            " | NodeValue: " + aChild.nodeValue +
+            " | NodeType: " + aChild.nodeType;
+
         // Span node
         var spanNode = document.getElementById("sp1");
-        document.getElementById("id4").innerHTML =
+        document.getElementById("id6").innerHTML =
             "NodeName: " + spanNode.nodeName +
             " | NodeValue: " + spanNode.firstChild.nodeValue +
             " | NodeType: " + spanNode.nodeType;
 
-        // Img node
-        var imgNode = document.getElementById("img1");
-        document.getElementById("id5").innerHTML =
-            "NodeName: " + imgNode.nodeName +
-            " | NodeValue: " + imgNode.nodeValue +
-            " | NodeType: " + imgNode.nodeType;
-
-        // Script node itself
-        var scriptNode = document.querySelector("script");
-        document.getElementById("id6").innerHTML =
-            "NodeName: " + scriptNode.nodeName +
-            " | NodeValue: " + scriptNode.nodeValue +
-            " | NodeType: " + scriptNode.nodeType;
+        // Span text child
+        var spanText = spanNode.firstChild;
+        document.getElementById("id7").innerHTML =
+            "NodeName: " + spanText.nodeName +
+            " | NodeValue: " + spanText.nodeValue +
+            " | NodeType: " + spanText.nodeType;
     </script>
 
     <div class="row">
