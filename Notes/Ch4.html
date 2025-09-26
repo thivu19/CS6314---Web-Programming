@@ -4,6 +4,7 @@
 <head>
     <title>JavaScript: Client-Side Scripting</title>
     <link rel="stylesheet" type="text/css" href="Ch4.css">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
 
 <body>
@@ -537,6 +538,157 @@
         </script>
 
         <p>The original image was banana.jpg, but the script changed it to dog.jpeg</p>
+    </div>
+    <hr>
+    <div>
+        <h3>JS HTML DOM EventListener</h3>
+        <p>
+            Attaches an event handler to the specified element. Can add many event handlers to one element.
+            Also, can add many event handlers of the sae type to one element.
+            <code>element.addEventListener(event, function, useCapture);</code>
+            The first parameter is the type of the event (like “click” or “mousedown”or any other HTML DOM Event.)
+            The second parameter is the function we want to call when the event occurs.
+            The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This
+            parameter is optional.
+        </p>
+
+        <p>This example uses the addEventListener() method to add two click events to the same button.</p>
+
+        <button id="myBtn">Try it</button>
+
+        <script>
+            var x1 = document.getElementById("myBtn");
+            x1.addEventListener("click", myFunction);
+            x1.addEventListener("click", someOtherFunction);
+
+            function myFunction() {
+                alert("Hello World!");
+            }
+
+            function someOtherFunction() {
+                alert("This function was also executed!");
+            }
+        </script>
+
+        <p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+        <button id="myBtn1">Try it</button>
+
+        <p id="demo19"></p>
+
+        <script>
+            var x3 = document.getElementById("myBtn1");
+            x3.addEventListener("mouseover", myFunction);
+            x3.addEventListener("click", mySecondFunction);
+            x3.addEventListener("mouseout", myThirdFunction);
+
+            function myFunction() {
+                document.getElementById("demo19").innerHTML += "Moused over!<br>";
+            }
+
+            function mySecondFunction() {
+                document.getElementById("demo19").innerHTML += "Clicked!<br>";
+            }
+
+            function myThirdFunction() {
+                document.getElementById("demo19").innerHTML += "Moused out!<br>";
+            }
+        </script>
+        <p>
+            There are two ways of event propagation in the HTML DOM, bubbling and capturing.<br>
+            In <strong>bubbling</strong> the inner most element's event is handled first and then the outer<br>
+            In <strong>capturing</strong> the outer most element's event is handled first and then the inner<br><br>
+            • With the addEventListener() method you can specify the
+            propagation type by using the "useCapture" parameter:<br>
+            <code>addEventListner(event, function, useCapture);</code><br>
+            • The default value is false, which will use the bubbling propagation, when the value is set to true, the
+            event
+            uses the capturing propagation
+        </p>
+
+        <div id="myDiv1">
+            <h2>Bubbling:</h2>
+            <p id="myP1">Click me!</p>
+        </div><br>
+
+        <div id="myDiv2">
+            <h2>Capturing:</h2>
+            <p id="myP2">Click me!</p>
+        </div>
+
+        <script>
+            document.getElementById("myP1").addEventListener("click", function () {
+                alert("You clicked the white element!");
+            }, false);
+
+            document.getElementById("myDiv1").addEventListener("click", function () {
+                alert("You clicked the orange element!");
+            }, false);
+
+            document.getElementById("myP2").addEventListener("click", function () {
+                alert("You clicked the white element!");
+            }, true);
+
+            document.getElementById("myDiv2").addEventListener("click", function () {
+                alert("You clicked the orange element!");
+            }, true);
+        </script>
+    </div>
+    <div>
+        <h3>DOM Nodes</h3>
+        <p>
+            According to the W3C HTML DOM standard, everything in
+            an HTML document is a node:<br>
+            • The entire document is a document node<br>
+            • Every HTML element is an element node<br>
+            • The text inside HTML elements are text nodes<br>
+            • Every HTML attribute is an attribute node (deprecated)<br>
+            • All comments are comment nodes<br>
+        </p>
+        <h3>Node Relationships</h3>
+        <p>
+            The nodes in the node tree have a hierarchical relationship to each
+            other. The terms parent, child, and sibling are used to describe the
+            relationships.<br>
+            • In a node tree, the top node is called the root (or root node)<br>
+            • Every node has exactly one parent, except the root (which has
+            no parent)<br>
+            • A node can have a number of children<br>
+            • Siblings (brothers or sisters) are nodes with the same parent<br>
+        </p>
+        <h3>Child Nodes and Node Values</h3>
+        <p>
+            <code><*title id="demo">DOM Tutorial<*/title></code><br>
+            The value of the text node can be accessed by the node’s innerHTML property:<br>
+            <code>var myTitle = document.getElementById("demo").innerHTML;</code><br>
+            Accessing the innerHTML property is the same as accessing the nodeValue of the first child:<br>
+            <code>var myTitle = document.getElementById("demo").firstChild.nodeValue;</code><br>
+            Accessing the first child can also be done like this:<br>
+            <code>var myTitle = document.getElementById("demo").childNode[0].nodeValue;</code>
+        </p>
+        <h3>DOM Root Nodes</h3>
+        <p>
+            There are two special properties that allow access to the full document:<br>
+            document.body: The body of the document<br>
+            document.documentElement: he full document<br>
+        </p>
+        <h3>The nodeName Property</h3>
+        <p>
+            The nodeName property specifies the <strong>name</strong> of a node.<br>
+            • nodeName is read-only<br>
+            • nodeName of an element node is the same as the tag name<br>
+            • nodeName of an attribute node is the attribute name<br>
+            • nodeName of a text node is always #text<br>
+            • nodeName of the document node is always #document<br><br>
+            The nodeValue property specifies the <strong>value</strong> of a node.<br>
+            • nodeValue for element nodes is null<br>
+            • nodeValue for text nodes is the text itself<br>
+            • nodeValue for attribute nodes is the attribute value<br>
+        </p>
+        <h3>The nodeType Property</h3>
+        <p>
+            Read only. It returns the type of a node.
+        </p>
     </div>
 </body>
 

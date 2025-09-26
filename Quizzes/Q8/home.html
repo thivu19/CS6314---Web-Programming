@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title Page</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script type="text/JavaScript" src="home.js"></script>
+</head>
+
+<body id="body">
+    <h3>Banana</h3>
+    <a id="a1" href="https://www.google.com/">Google</a>
+    <span id="sp1" style="color:blue;">Hello World</span>
+    <img id="img1" src="Banana.jpg" alt="Banana">
+
+    <p id="id1"></p>
+    <p id="id2"></p>
+    <p id="id3"></p>
+    <p id="id4"></p>
+    <p id="id5"></p>
+    <p id="id6"></p>
+
+    <script>
+        // Body node
+        var bodyNode = document.getElementById("body");
+        document.getElementById("id1").innerHTML =
+            "NodeName: " + bodyNode.nodeName +
+            " | NodeValue: " + bodyNode.nodeValue +
+            " | NodeType: " + bodyNode.nodeType;
+
+        // H3 node
+        var h3Node = document.querySelector("h3");
+        document.getElementById("id2").innerHTML =
+            "NodeName: " + h3Node.nodeName +
+            " | NodeValue: " + h3Node.firstChild.nodeValue +
+            " | NodeType: " + h3Node.nodeType;
+
+        // Anchor node
+        var aNode = document.getElementById("a1");
+        document.getElementById("id3").innerHTML =
+            "NodeName: " + aNode.nodeName +
+            " | NodeValue: " + aNode.nodeValue +
+            " | NodeType: " + aNode.nodeType;
+
+        // Span node
+        var spanNode = document.getElementById("sp1");
+        document.getElementById("id4").innerHTML =
+            "NodeName: " + spanNode.nodeName +
+            " | NodeValue: " + spanNode.firstChild.nodeValue +
+            " | NodeType: " + spanNode.nodeType;
+
+        // Img node
+        var imgNode = document.getElementById("img1");
+        document.getElementById("id5").innerHTML =
+            "NodeName: " + imgNode.nodeName +
+            " | NodeValue: " + imgNode.nodeValue +
+            " | NodeType: " + imgNode.nodeType;
+
+        // Script node itself
+        var scriptNode = document.querySelector("script");
+        document.getElementById("id6").innerHTML =
+            "NodeName: " + scriptNode.nodeName +
+            " | NodeValue: " + scriptNode.nodeValue +
+            " | NodeType: " + scriptNode.nodeType;
+    </script>
+
+    <div class="row">
+        <div class="footer">
+            <h2>Footer</h2>
+            <h3 id="Thi">Thi Vu, TAV180002</h3>
+            <h3 id="Nick">Nicholas Aminzadeh, NHA190001</h3>
+            <h3 id="Chang">Changhui Sun, CXS240024</h3>
+        </div>
+    </div>
+</body>
+
+</html>
