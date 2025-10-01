@@ -689,6 +689,119 @@
         <p>
             Read only. It returns the type of a node.
         </p>
+        <h3>Property</h3>
+        <p>
+            attributes - Collection of node attributes<br>
+            childNodes - A NodeList of child nodes for this node<br>
+            firstChild - First child node of this node.<br>
+            lastChild - Last child of this node.<br>
+            nextSibling - Next sibling node for this node.<br>
+            nodeName - Name of the node<br>
+            nodeType - Type of the node<br>
+            nodeValue - Value of the node<br>
+            parentNode - Parent node for this node.<br>
+            previousSibling - Previous sibling node for this node.<br>
+            insertBefore - Add node as a first child<br>
+            removeChild - Remove child node<br>
+            replaceChild - Replace an old element with a new child node
+        </p>
+
+        <!-- This is a comment node! -->
+
+        <h1>The Element Object</h1>
+        <h2>The childNodes Property</h2>
+        <p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+        <p>The body element's child nodes are:</p>
+        <p id="demo20"></p>
+
+        <script>
+            const nodeList = document.body.childNodes;
+
+            let text4 = "";
+            for (let i = 0; i < nodeList.length; i++) {
+                text4 += nodeList[i].nodeName + "<br>";
+            }
+            document.getElementById("demo20").innerHTML = text4;
+        </script>
+
+        <h2>The firstChild Property</h2>
+
+        <p>Example list:</p>
+        <ul id="myList2">
+            <li>Coffee</li>
+            <li>Tea</li>
+        </ul>
+
+        <p>The HTML content of the list's first child node is:</p>
+        <p id="demo21"></p>
+
+        <p>Whitespace between elements is considered text nodes.
+            If there is a whitespace before the first "li" element, the result will be "undefined".</p>
+
+        <script>
+            let text5 = document.getElementById("myList2").firstChild.innerHTML;
+            document.getElementById("demo21").innerHTML = text5;
+        </script>
+
+        <p>Add a new HTML Element.</p>
+
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+
+        <script>
+            const para = document.createElement("p");
+            const node = document.createTextNode("This is new.");
+            para.appendChild(node);
+            const element3 = document.getElementById("div1");
+            element3.appendChild(para);
+        </script>
+    </div>
+    <div>
+        <h3>Event Types</h3>
+        <p>
+            onclick - The mouse was clicked on an element<br>
+            ondblclick - The mouse was double clicked on an element<br>
+            onmousedown - The mouse was pressed down over an element<br>
+            onmouseup - The mouse was released over an element<br>
+            onmouseover - The mouse was moved (not clicked) over an element<br>
+            onmouseout - The mouse was moved off of an element<br>
+            onmousemove - The mouse was moved while over an element<br>
+            onkeydown - The user is pressing a key (this happens first)<br>
+            onkeypress - The user presses a key (this happens after onkeydown)<br>
+            onkeyup - The user releases a key that was down (this happens last)<br>
+            onblur - A form element has lost focus (that is, control has moved to a
+            different element, perhaps due to a click or Tab key press.
+            onchange - Some input>, textarea> or select> field had their value change. This could mean the user typed something, or selected a new choice.<br>
+            onfocus - Complementing the onblur event, this is triggered when an
+            element gets focus (the user clicks in the field or tabs to it)
+            onreset - HTML forms have the ability to be reset. This event is triggered
+            when that happens.<br>
+            onselect - When the users selects some text. This is often used to try and
+            prevent copy/paste.<br>
+            onsubmit - When the form is submitted this event is triggered. We can do
+            some pre-validation when the user submits the form in
+            JavaScript before sending the data on to the server.<br>
+        </p>
+    </div>
+    <div>
+        <h2>JavaScript Validation</h2>
+
+        <form action="/action_page.php" method="post">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+        </form>
+
+        <p>If you click submit, without filling out the text field,
+        your browser will display an error message.</p>
+
+        <h3>Validating Forms</h3>
+        <p>Writing code to pre-validate forms on the client side will reduce the number of incorrect
+            submissions, therby reducing server load. There are a number of common validation activities 
+            including email validation, number validation, and data validation.
+        </p>
     </div>
 </body>
 
