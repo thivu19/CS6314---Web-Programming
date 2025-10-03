@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        A popular JS library that designed to simplify DOM-oriented client-side scripting.
+        Lightweigth, "write less, do more", JS library. jQuery creates higher-level methods needed for achieving
+        common tasks by wrapping several JavaScript statements into a single call
+    </div>
+    <div>
+        <h3>Features</h3>
+        <p>
+            The jQuery library contains the following features:<br>
+            • HTML/DOM manipulation<br>
+            • CSS manipulation<br>
+            • HTML event methods<br>
+            • Effects and animations<br>
+            • AJAX (Asynchronous JavaScript and XML)<br>
+        </p>
+    </div>
+    <div>
+        <h3>Syntax</h3>
+        <p>
+            • Basic syntax is: $(selector).action()<br>
+            • $ sign to specify jQuery<br>
+            • selector to specify the HTML elements to select/query<br>
+            • action is the action to be performed on the element(s)<br><br>
+            • Use jQuery Selector to select/query HTML elements<br>
+            • Actions can then be performed on the selected/queried elements<br>
+            • jQuery functions can be stored in a separate .js file and
+            referenced using the “script” element’s “src” attribute
+        </p>
+    </div>
+    <div>
+        <h3>Document Ready Event</h3>
+        <p>
+            • Document Ready Event is used to prevent any jQuery
+            code from running before the document is finished loading<br>
+            • Good practice to wait for the document to be fully
+            loaded and ready before manipulating it<br>
+            • Problems if JavaScript Statements run before document is
+            fully loaded:<br><br>
+            • Hide an element that is not created yet<br>
+            • Get the size of an image that is not loaded yet<br>
+        </p>
+    </div>
+    <div>
+        <h3>Selectors</h3>
+        <p>
+            jQuery selectors: select and manipulate HTML element(s).<br>
+            jQuery selectors are used to “find" HTML elements based on their name, id, classes, types, attributes,
+            and values of attributes
+        </p>
+
+        <h2>This is a heading</h2>
+
+        <p id="p1">This is a paragraph.</p>
+        <p id="p1">This is another paragraph.</p>
+
+        <button id="b1">Click me to hide paragraphs</button>
+
+        <script>
+            $(document).ready(function () {
+                $("#b1").click(function () {
+                    $("#p1").hide();
+                });
+            });
+        </script>
+
+        <h2 class="test">This is a heading</h2>
+
+        <p class="test">This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+
+        <button id="b2">Click me</button>
+        <script>
+            $(document).ready(function () {
+                $("#b2").click(function () {
+                    $(".test").hide();
+                });
+            });
+        </script>
+    </div>
+    <div>
+        <h3>Syntax for Event Methods</h3>
+
+        <p>The click() / dbclick() method attaches an event handler function
+            to an HTML element. It is executed when the user clicks/double
+            click on the HTML element
+        </p>
+        <p id="p3">If you double-click on me, I will disappear.</p>
+        <p id="p3">Click me away!</p>
+        <p id="p3">Click me too!</p>
+
+        <script>
+            $(document).ready(function () {
+                $("p3").dblclick(function () {
+                    $(this).hide();
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The mouseenter()/mouseleave() method attaches an event
+            handler function to an HTML element. It is executed when the
+            mouse pointer enters/leaves the HTML element:
+        </p>
+        <p id="p4">Enter this paragraph.</p>
+        <script>
+            $(document).ready(function () {
+                $("#p4").mouseenter(function () {
+                    alert("You entered p4!");
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The mousedown()/ mouseup() method is executed, when the left,
+            middle or right mouse button is pressed down/released, while the
+            mouse is over the HTML element
+        </p>
+        <p id="p5">This is a paragraph. Mousedown and mouseup</p>
+        <script>
+            $(document).ready(function () {
+                $("#p5").mouseup(function () {
+                    alert("Mouse up over p5!");
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The hover() method is a combination of the mouseenter() and
+            mouseleave() methods.
+        </p>
+        <p id="p6">This is a paragraph. Hover</p>
+        <script>
+            $(document).ready(function () {
+                $("#p6").hover(function () {
+                    alert("You entered p6!");
+                },
+                    function () {
+                        alert("Bye! You now leave p6!");
+                    });
+            });
+        </script>
+        <hr>
+        <p>
+            The blur () method is executed when the form field loses focus
+        </p>
+        <p id="p7">
+            Name: <input type="text" name="fullname"><br>
+            Email: <input type="text" name="email">
+        </p>
+        <script>
+            $(document).ready(function () {
+                $("input").focus(function () {
+                    $(this).css("background-color", "yellow");
+                });
+                $("input").blur(function () {
+                    $(this).css("background-color", "green");
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The on() method attaches one or more event handlers for
+            the selected elements. Attach a click event to a p> element:
+        </p>
+        <p id="p8">If you click on me, I will disappear.</p>
+        <script>
+            $(document).ready(function () {
+                $("#p8").on("click", function () {
+                    $(this).hide();
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            You can hide and show HTML elements with the hide() and show() methods:
+        </p>
+        <p id="p9">If you click on the "Hide" button, I will disappear.</p>
+
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <script>
+            $(document).ready(function () {
+                $("#hide").click(function () {
+                    $("#p9").hide();
+                });
+                $("#show").click(function () {
+                    $("#p9").show();
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The optional speed parameter specifies the speed of the
+            hiding/showing (“slow", "fast", or milliseconds)
+        </p>
+        <button id="b0">Hide</button>
+
+        <p id="p10">This is a paragraph with little content.</p>
+        <p id="p10">This is another small paragraph.</p>
+        <script>
+            $(document).ready(function () {
+                $("#b0").click(function () {
+                    $("#p10").hide(1000);
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The fadeIn() method gradually changes the opacity, for selected elements, from
+            hidden to visible
+        </p>
+        <p>Demonstrate fadeIn() with different parameters.</p>
+        <button id="b3">Click to fade in boxes</button><br><br>
+        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+        <script>
+            $(document).ready(function () {
+                $("#b3").click(function () {
+                    $("#div1").fadeIn();
+                    $("#div2").fadeIn("slow");
+                    $("#div3").fadeIn(3000);
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The fadeOut() method gradually changes the opacity, for selected elements, from
+            visible to hidden
+        </p>
+        <p>Demonstrate fadeOut() with different parameters.</p>
+        <button id="b4">Click to fade out boxes</button><br><br>
+        <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+        <script>
+            $(document).ready(function () {
+                $("#b4").on("click", function () {
+                    $("#div4").fadeOut();
+                    $("#div5").fadeOut("slow");
+                    $("#div6").fadeOut(3000);
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The fadeToggle() method toggles between the fadeIn() and fadeOut() methods.
+        </p>
+        <p>Demonstrate fadeToggle() with different speed parameters.</p>
+        <button id="b5">Click to fade in/out boxes</button><br><br>
+        <div id="div7" style="width:80px;height:80px;background-color:red;"></div>
+        <br>
+        <div id="div8" style="width:80px;height:80px;background-color:green;"></div>
+        <br>
+        <div id="div9" style="width:80px;height:80px;background-color:blue;"></div>
+        <script>
+            $(document).ready(function () {
+                $("#b5").click(function () {
+                    $("#div7").fadeToggle();
+                    $("#div8").fadeToggle("slow");
+                    $("#div9").fadeToggle(3000);
+                });
+            });
+        </script>
+        <hr>
+        <p>
+            The jQuery fadeIn() method allows fading to a given opacity (value between 0 and 1).
+        </p>
+        <p>Demonstrate fadeTo() with different parameters.</p>
+        <button id="b6">Click to fade boxes</button><br><br>
+        <div id="div10" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div11" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div12" style="width:80px;height:80px;background-color:blue;"></div>
+        <script>
+            $(document).ready(function () {
+                $("#b6").click(function () {
+                    $("#div10").fadeTo("slow", 0.15);
+                    $("#div11").fadeTo("slow", 0.4);
+                    $("#div12").fadeTo("slow", 0.7);
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
