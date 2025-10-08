@@ -4,6 +4,7 @@
 <head>
     <title>jQuery</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" type="text/css" href="Ch5.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
@@ -290,6 +291,162 @@
                 });
             });
         </script>
+        <p>
+            The jQuery slideDown() method is used to slide downan element. The optional speed parameter: "slow", "fast",
+            or milliseconds.
+        </p>
+        <div id="flip">Click to slide down panel</div>
+        <div id="panel">Hello world!</div>
+        <script>
+            $(document).ready(function () {
+                $("#flip").click(function () {
+                    $("#panel").slideDown("slow");
+                });
+            });
+        </script>
+        <p>
+            The jQuery slideUp() method is used to slide up an element.
+        </p>
+        <p>
+            The jQuery slideToggle() method toggles between the slideDown() and slideUp() methods.
+        </p>
+        <p>
+            The stop() method is used to stop an animation or effect before it is finished.
+        </p>
+        <p>
+            A callback function is executed after the current effect is finished.
+        </p>
+        <button id="b7">Hide</button>
+        <p id="p11">This is a paragraph with little content.</p>
+        <script>
+            $(document).ready(function () {
+                $("#b7").click(function () {
+                    $("#p11").hide("slow", function () {
+                        alert("The paragraph is now hidden");
+                    });
+                });
+            });
+        </script>
+    </div>
+    <div>
+        <h3>JQuery Callback Functions</h3>
+        <p>
+            You can chain together actions/methods. Chaining allows us to run multiple jQuery
+            methods on the same element
+        </p>
+        <p id="p12">jQuery is fun!!</p>
+        <button id="b8">Click me</button>
+        <script>
+            $(document).ready(function () {
+                $("#b8").click(function () {
+                    $("#p12").css("color", "red").slideUp(2000).slideDown(2000);
+                });
+            });
+        </script>
+        <h3>JQuert - Chaining</h3>
+        <p>
+            You can chain together actions/methods. Chaining allows us to run multiple jQuery
+            methods on the same element
+        </p>
+        <h3>jQUery for DOM manipulation</h3>
+        <p>
+            jQuery methods for DOM manipulation<br>
+            • text()- Sets or returns the text content of selected elements<br>
+            • html()- Sets or returns the content of selected elements (including HTML markup)<br>
+            • val()-Sets or returns the value of form fields
+        </p>
+        <h3>jQuery - Add Elements</h3>
+        <p>
+            Add New HTML Content<br>
+            • append()- Inserts content at the end of the selected elements<br>
+            • prepend()- Inserts content at the beginning of the selected elements<br>
+            • after()- Inserts content after the selected elements<br>
+            • before()- Inserts content before the selected elements<br>
+        </p>
+        <p id="p13">This is a paragraph.</p>
+        <button id="b9" onclick="appendText()">Append text</button>
+        <script>
+            function appendText() {
+                var txt1 = "<p>Text.</p>";              // Create text with HTML
+                var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+                var txt3 = document.createElement("p"); // Create text with DOM
+                txt3.innerHTML = "Text.";
+                $("body").append(txt1, txt2, txt3);     // Append new elements
+            }
+        </script>
+        <p>
+            after() function
+        </p>
+        <img id="img1" src="apple.jpeg" alt="Apple" width="200" height="200">
+        <p>Click the button to insert text after the image.</p>
+        <button onclick="afterText()">Insert after</button>
+        <script>
+            function afterText() {
+                var txt1 = "<b>I </b>";           // Create element with HTML
+                var txt2 = $("<i></i>").text("love ");  // Create with jQuery
+                var txt3 = document.createElement("b");   // Create with DOM
+                txt3.innerHTML = "Apple!";
+                $("#img1").after(txt1, txt2, txt3);    // Insert new elements after img
+            }
+        </script>
+        <h3>jQuery - Remove Elements</h3>
+        <p>
+            remove()- Removes the selected element (and its child elements)
+        </p>
+        <div id="div13" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+            This is some text in the div.
+            <p>This is a paragraph in the div.</p>
+            <p>This is another paragraph in the div.</p>
+        </div>
+        <br>
+        <button id="b10">Remove div element</button>
+        <script>
+            $(document).ready(function () {
+                $("#b10").click(function () {
+                    $("#div13").remove();
+                });
+            });
+        </script>
+        <p>
+            empty()- Removes the child elements from the selected element
+        </p>
+        <div id="div14" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+            This is some text in the div.
+            <p>This is a paragraph in the div.</p>
+            <p>This is another paragraph in the div.</p>
+        </div>
+        <br>
+        <button id="b11">Empty the div element</button>
+        <script>
+            $(document).ready(function () {
+                $("#b11").click(function () {
+                    $("#div14").empty();
+                });
+            });
+        </script>
+    </div>
+    <div>
+        <h3>jQuery - Get and Set CSS Classes</h3>
+        <p>
+            jQuery has several methods for CSS manipulation.<br>
+            • addClass(): Adds one or more classes to the selected elements<br>
+            • removeClass(): Removes one or more classes from the selected elements<br>
+            • toggleClass(): Toggles between adding/removing classes from the selected elements<br>
+            • css(): Sets or returns one or more style properties for the selected elements<br>
+        </p>
+        <h3>jQuery Dimension Methods</h3>
+        <p>
+            jQuery has several important methods for working with dimensions:<br>
+            • width()<br>
+            • height()<br>
+            • innerWidth()<br>
+            • innerHeight()<br>
+            • outerWidth()<br>
+            • outerHeight()<br>
+        </p>
+        <img src="dimension.png" alt="Dimension" width="350px" height="300px">
     </div>
 </body>
 

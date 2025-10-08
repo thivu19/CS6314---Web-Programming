@@ -1,0 +1,79 @@
+/* Style the navigation container */
+.topnav {
+    display: flex;                 /* flexbox instead of float */
+    justify-content: space-around; /* spread links evenly */
+    background-color: lightblue;
+    width: 100%;                   /* fill the window width */
+}
+
+/* Style individual links */
+.topnav a {
+    flex-grow: 1;                  /* each link stretches equally */
+    color: rgb(45, 45, 65);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;         /* remove underline */
+    font-size: 20px;
+}
+
+.row::after {
+    clear: both;
+}
+
+/*Change color for top navigation*/
+.topnav a:hover{
+    background-color: rgb(132, 190, 209);
+    color: black;
+}
+
+/*Style header*/
+.header {
+    background-color: rgb(227, 239, 237);
+    padding: 20px;
+    text-align: center;
+}
+
+/*Left and right column*/
+.column.side {
+    width: 25%;
+    float: left;
+    background-color: rgb(225, 208, 187);
+}
+
+/*Middle column*/
+.column.middle {
+    width: 50%;
+    float: left;
+    background-color:rgb(178, 221, 223);
+}
+
+/*Footer*/
+.footer {
+    background-color: rgb(227, 239, 237);
+    padding: 20px;
+    clear: both;
+}
+
+#panel, #flip {
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #cad4b4;
+  color: white;
+  border: solid 1px #9dc2a0;
+  border-radius: 3px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+.important {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.blue {
+  color: blue;
+}

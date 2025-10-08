@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz 11</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Quiz 11</h1>
+    </div>
+
+    <div class="row">
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2>Left Side</h2>
+        </div>
+        <div class="column middle">
+            <h2>Main content</h2>
+            <p>Use at least 20 jQuery methods to develop your web page</p>
+            <p>Hover in/out the text below to fade in/out an image of a banana.</p>
+            <div id="fadeIn" style="background-color:rgb(228, 189, 163); width:150px; height:25px;">Fade in the Banana!</div>
+            <img id="image" src="banana.jpg" alt="Banana" width="100" height="100" hidden="none">
+            <script>
+                $(document).ready(function () {
+                    $("#fadeIn").on("mouseenter", function () {
+                        $("#image").fadeIn("slow");
+                    });
+                    $("#fadeIn").on("mouseleave", function () {
+                        $("#image").fadeOut("slow");
+                    });
+                });
+            </script>
+            <hr>
+            <button id="b1">Click to fade in/out boxes</button><br><br>
+            <div id="div1" style="width:80px;height:80px;background-color:rgb(240, 150, 150);"></div>
+            <br>
+            <div id="div2" style="width:80px;height:80px;background-color:rgb(142, 239, 142);"></div>
+            <br>
+            <div id="div3" style="width:80px;height:80px;background-color:rgb(239, 207, 142);"></div>
+            <script>
+                $(document).ready(function () {
+                    $("#b1").click(function () {
+                        $("#div1").fadeTo("slow", 0.12);
+                        $("#div2").fadeTo("slow", 0.4);
+                        $("#div3").fadeTo("slow", 0.7);
+                    });
+                });
+            </script>
+            <hr>
+            <button id="stop">Click to stop sliding</button>
+            <div id="flip">Click to slide down the panel</div>
+            <div id="panel">We love banana!!!</div>
+            <script>
+                $(document).ready(function () {
+                    $("#flip").click(function () {
+                        $("#panel").slideDown(10000);
+                    });
+                    $("#stop").click(function () {
+                        $("#panel").stop();
+                    });
+                });
+            </script>
+            <hr>
+            <button id="b2">Hide the Banana!</button>
+            <img id="img1" src="banana.jpg" alt="Banana" width="300" height="300">
+            <script>
+                $(document).ready(function () {
+                    $("#b2").click(function () {
+                        $("#img1").hide("slow", function () {
+                            alert("The Banana is now hidden");
+                        });
+                    });
+                });
+            </script>
+            <hr>
+            <p id="p1">Apples are delicious!!</p>
+            <button id="b3">Click me</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b3").click(function () {
+                        $("#p1").css("color", "red").slideUp(2000).slideDown(2000).slideUp(2000).slideDown(2000);
+                    });
+                });
+            </script>
+            <hr>
+            <p id="p2">This a <b>Banana</b> and it's a fruit.</p>
+            <button id="b4">Show Text</button>
+            <button id="b5">Show HTML</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b4").click(function () {
+                        alert("Text: " + $("#p2").text());
+                    });
+                    $("#b5").click(function () {
+                        alert("HTML: " + $("#p2").html());
+                    });
+                });
+            </script>
+            <hr>
+            <p>Favorite fruit: <input type="text" id="p3" value="Apple"></p>
+            <button id="b6">Show Value</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b6").click(function () {
+                        alert("Value: " + $("#p3").val());
+                    });
+                });
+            </script>
+            <hr>
+            <p id="p4">Apples are amazing.</p>
+            <p id="p5">Banana are fantastic.</p>
+            <ol>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Lychee</li>
+            </ol>
+            <button id="b7">Banana</button>
+            <button id="b8">Apple</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b7").click(function () {
+                        $("#p4").prepend(" <b>Banana</b>.");
+                    });
+
+                    $("#b8").click(function () {
+                        $("ol").append("<li>Apple</li>");
+                    });
+                });
+            </script>
+            <hr>
+            <img id="img2" src="apple.jpeg" alt="Apple" width="350" height="300">
+            <p>Click the button to insert text after the image.</p>
+            <button onclick="afterText()">Insert after</button>
+            <button onclick="beforeText()">Insert before</button>
+            <script>
+                function afterText() {
+                    var txt1 = "<b>I </b>";                 // Create element with HTML
+                    var txt2 = $("<i></i>").text("love ");  // Create with jQuery
+                    var txt3 = document.createElement("b");  // Create with DOM
+                    txt3.innerHTML = "Apple!";
+                    $("#img2").after(txt1, txt2, txt3);    // Insert new elements after img
+                }
+                function beforeText() {
+                    var txt1 = "<b>I </b>";                 // Create element with HTML
+                    var txt2 = $("<i></i>").text("love alot of ");  // Create with jQuery
+                    var txt3 = document.createElement("b");  // Create with DOM
+                    txt3.innerHTML = "Apple!";
+                    $("#img2").before(txt1, txt2, txt3);    // Insert new elements after img
+                }
+            </script>
+            <hr>
+            <div id="div4"
+                style="height:100px;width:300px;border:1px solid rgb(40, 40, 40);background-color:rgb(229, 229, 147);">
+                We love Bananas.
+                <p>We love Bananas!</p>
+                <p>We love Bananas!!</p>
+            </div>
+            <br>
+            <button id="b10">Remove div element</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b10").click(function () {
+                        $("#div4").remove();
+                    });
+                });
+            </script>
+            <hr>
+            <div id="div5"
+                style="height:100px;width:300px;border:1px solid rgb(40, 40, 40);background-color:rgb(229, 229, 147);">
+                We love Bananas.
+                <p>We love Bananas!</p>
+                <p>We love Bananas!!</p>
+            </div>
+            <br>
+            <button id="b11">Empty div element</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b11").click(function () {
+                        $("#div5").empty();
+                    });
+                });
+            </script>
+            <h1 id="he1">Bananas!!!</h1>
+            <h2 id="he2">Yummy banana!</h2>
+            <p id="p6">Everyone should get bananas.</p>
+            <div id="div6">Bananas are very important fruits!</div><br>
+            <button id="b12">Add classes to elements</button>
+            <button id="b13">Remove classes to elements</button>
+            <button id="b14">Toggle classes to elements</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b12").click(function () {
+                        $("#he1, #he2, #p6").addClass("blue");
+                        $("#div6").addClass("important");
+                    });
+                    $("#b13").click(function () {
+                        $("#he1, #he2, #p6").removeClass("blue");
+                    });
+                    $("#b14").click(function () {
+                        $("#he1, #he2, #p6").toggleClass("blue");
+                    });
+                });
+            </script>
+            <hr>
+            <div id="div15" style="padding:10px; width:200px; height:100px;">
+                <img id="img3" src="banana.jpg" alt="Banana" width="100" height="100">
+            </div>
+            <p id="p7"></p>
+            <p id="p8"></p>
+            <button id="b15">Get size of image</button>
+            <button id="b16">Get size of div</button>
+            <script>
+                $(document).ready(function () {
+                    $("#b15").click(function () {
+                        var txt = "";
+                        txt += "Width of image: " + $("#img3").width() + "</br>";
+                        txt += "Height of image: " + $("#img3").height();
+                        $("#p7").html(txt);
+                    });
+                    $("#b16").click(function () {
+                        var txt = "";
+                        txt += "Inner width of image: " + $("#div15").innerWidth() + "</br>";
+                        txt += "Inner height of image: " + $("#div15").innerHeight();
+                        $("#p8").html(txt);
+                    });
+                });
+            </script>
+        </div>
+        <div class="column side">
+            <h2> Right Side</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer">
+            <h2>Footer</h2>
+            <h3 id="Thi">Thi Vu, TAV180002</h3>
+            <h3 id="Nick">Nicholas Aminzadeh, NHA190001</h3>
+            <h3 id="Chang">Changhui Sun, CXS240024</h3>
+        </div>
+    </div>
+</body>
+
+</html>
