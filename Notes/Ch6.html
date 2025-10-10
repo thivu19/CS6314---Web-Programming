@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>XML and JSON</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" type="text/css" href="Ch6.css">
+</head>
+
+<body>
+    <h2>XML Introduction</h2>
+    <h3>What is XML?</h3>
+    <p>
+        • XML stands for eXtensible Markup Language<br>
+        • A markup language much like HTML<br>
+        • Designed to store and transport data<br>
+        • Designed to be self-descriptive<br>
+        • Stores data in plain text format<br>
+    </p>
+    <h3>Difference Between XML & HTML</h3>
+    <p>
+        XML is designed to carry data. While HTML is designed to display data.
+    </p>
+    <h3>How Can XML be Used?</h3>
+    <p>
+        XML is often used to separate data from presentation and is often a complement
+        to HTML.
+    </p>
+    <h3>XML Syntax Rules</h3>
+    <p>
+        XML Documents Must Have a Root Element that is the parent of all
+        other elements.<br>
+        This line is called the XML <strong>prolog</strong>: <code>?xml version="1.0" encoding=“UTF-8"?</code>
+        The XML prolog is optional. If it exists, it must come first in the document. XML documents can contain
+        international characters, like Norwegian øæå or French êèé. To avoid errors, you should specify the encoding
+        used, or
+        save your XML files as UTF-8.<br>
+        • XML tags are case sensitve<br>
+        • XML elements can have attributes in name/value pairs just like in HTML.<br>
+    </p>
+    <h3>XML DOM</h3>
+    <p>
+        The XML DOM defines a standard way for accessing and
+        manipulating XML documents. It presents an XML document as a
+        tree-structure
+    </p>
+    <p id="demo1"></p>
+    <script>
+        var parser, xmlDoc;
+        var text = "<bookstore><book>" +
+            "<title>Everyday Italian</title>" +
+            "<author>Giada De Laurentiis</author>" +
+            "<year>2005</year>" +
+            "</book></bookstore>";
+
+        parser = new DOMParser();
+        xmlDoc = parser.parseFromString(text, "text/xml");
+
+        document.getElementById("demo1").innerHTML =
+            xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    </script>
+    <h3>XML DOM Nodes</h3>
+    <p>
+        According to the XML DOM, everything in an XML document is a node:<br>
+        • The entire document is a document node<br>
+        • Every XML element is an element node<br>
+        • The text in the XML elements are text nodes<br>
+        • Every attribute is an attribute node<br>
+        • Comments are comment nodes<br>
+    </p>
+    <h3>XML DOM - Accessing Nodes</h3>
+    <p>
+        The getElementsByTagName() Method returns all elements with a specified tag name.<br>
+        In the XML DOM, each node is an object. Three important node properties are:<br>
+        • nodeName: read-only, an element node is the same as the tag name, an attribute node is the attribute name,
+        a text node is always #text, and the document node is always #document<br>
+        • nodeValue: element nodes is undefined, text nodes is the text itself, and attribute nodes is the attribute 
+        value<br>
+        • nodeType: read-only and specifies the type of node<br>
+    </p>
+</body>
+
+</html>
