@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Car</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/JavaScript" src="travel.js"></script>
+</head>
+
+<body id="body">
+    <div class="header">
+        <h1>Book Car</h1>
+    </div>
+
+    <div class="row">
+        <div class="topnav">
+            <a href="home.html">Home</a>
+            <a href="stays.html">Stays</a>
+            <a href="flights.html">Flights</a>
+            <a href="cars.html">Cars</a>
+            <a href="cruises.html">Cruises</a>
+            <a href="contact-us.html">Contact us</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2>Left Side</h2>
+        </div>
+        <div class="column middle">
+            <h2>Search for Cars</h2>
+            <form>
+                City:<br>
+                <input id="city" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="city"><br>
+                Type of Car:<br>
+                <input id="carType" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="carType"><br>
+                Check in Date:<br>
+                <input id="checkIn" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="checkIn"><br>
+                Check out Date:<br>
+                <input id="checkOut" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="checkOut"><br>
+                <button type="button" onclick="validateInfoCar()">Submit</button>
+            </form>
+            <p id="carInfo"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer">
+            <h2>Footer</h2>
+            <h3 id="Thi">Thi Vu, TAV180002</h3>
+            <h3 id="Nick">Nicholas Aminzadeh, NHA190001</h3>
+            <h3 id="Chang">Changhui Sun, CXS240024</h3>
+        </div>
+    </div>
+</body>
+
+</html>

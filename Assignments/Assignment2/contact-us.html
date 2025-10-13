@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/JavaScript" src="travel.js"></script>
+</head>
+
+<body id="body">
+    <div class="header">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="row">
+        <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#stays">Stays</a>
+            <a href="#flights">Flights</a>
+            <a href="cars.html">Cars</a>
+            <a href="#cruises">Cruises</a>
+            <a href="#contact">Contact us</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2>Left Side</h2>
+        </div>
+        <div class="column middle">
+            <h3>Contact Form</h3>
+            <form>
+                First name:<br>
+                <input id="firstname" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="firstname"><br>
+                Last name:<br>
+                <input id="lastname" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="lastname"><br>
+                Phone:<br>
+                <input id="phone" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="phone"><br>
+                Gender:<br>
+                <input type="radio" name="gender" value="male">
+                <label >Male</label>
+                <input type="radio" name="gender" value="female">
+                <label >Female</label><br>
+                Email:<br>
+                <input id="email" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="email"><br>
+                Comment:<br>
+                <input id="comment" type="text" onfocus="myFocus(this)" onblur="myBlur(this)" name="comment"><br><br>
+                <button type="button" onclick="validateInfoContact()">Submit</button>
+            </form>
+            <p id="contactInfo"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer">
+            <h2>Footer</h2>
+            <h3 id="Thi">Thi Vu, TAV180002</h3>
+            <h3 id="Nick">Nicholas Aminzadeh, NHA190001</h3>
+            <h3 id="Chang">Changhui Sun, CXS240024</h3>
+        </div>
+    </div>
+</body>
+
+</html>

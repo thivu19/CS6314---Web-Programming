@@ -1,0 +1,84 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;                     /* remove default margin */
+    padding: 0;                    /* remove default padding */
+    background-color: lightgrey;
+}
+
+/* Style the navigation container */
+.topnav {
+    display: flex;                 /* flexbox instead of float */
+    justify-content: space-around; /* spread links evenly */
+    background-color: lightblue;
+    width: 100%;                   /* fill the window width */
+}
+
+/* Style individual links */
+.topnav a {
+    flex-grow: 1;                  /* each link stretches equally */
+    color: rgb(45, 45, 65);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;         /* remove underline */
+    font-size: 20px;
+}
+
+.row::after {
+    clear: both;
+}
+
+/*Change color for top navigation*/
+.topnav a:hover{
+    background-color: rgb(132, 190, 209);
+    color: black;
+}
+
+/*Style header*/
+.header {
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(132, 190, 209);
+}
+
+/*Height of columns*/
+.column {
+    min-height: 550px;             /* ensure columns have some height */
+}
+
+/*Left column*/
+.column.side {
+    width: 15%;
+    float: left;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+/*Middle column*/
+.column.middle {
+    width: 80%;
+    float: left;
+    padding: 10px;
+}
+
+/*Footer*/
+.footer {
+    background-color: rgb(132, 190, 209);
+    padding: 20px;
+    clear: both;
+    text-align: center;
+}
+
+/* Input field styles */
+input[type=text] {
+    width: 20%;
+    padding: 6px 5px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#comment {
+    width: 30%;
+}
