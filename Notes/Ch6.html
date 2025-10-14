@@ -74,10 +74,89 @@
         In the XML DOM, each node is an object. Three important node properties are:<br>
         • nodeName: read-only, an element node is the same as the tag name, an attribute node is the attribute name,
         a text node is always #text, and the document node is always #document<br>
-        • nodeValue: element nodes is undefined, text nodes is the text itself, and attribute nodes is the attribute 
+        • nodeValue: element nodes is undefined, text nodes is the text itself, and attribute nodes is the attribute
         value<br>
         • nodeType: read-only and specifies the type of node<br>
     </p>
+    <hr>
+    <h2>JSON</h2>
+    <h3>Introduction</h3>
+    <p>
+        Receiving Data<br>
+        • If you receive data in JSON format, you can convert it into a JavaScript object
+    </p>
+    <h3>JSON Syntax</h3>
+    <p>
+        JSON syntax is derived from JavaScript object notation syntax:<br>
+        • Data is in name/value pairs<br>
+        • Data is separated by commas<br>
+        • Curly braces hold objects<br>
+        • Square brackets hold arrays<br>
+        • JSON data is written as name/value pairs. <code>"name":"John"</code><br>
+        • In JSON, keys must be strings, written with double quotes: <code>{"name":"John"}</code><br>
+        • In JavaScript, keys can be strings, numbers, or identifier names: <code>{name:"John"}</code>
+    </p>
+    <h3>JSON vs XML</h3>
+    <p>
+        • Both JSON and XML can be used to receive data from a web server.
+    </p>
+    <h3>JSON.parse()</h3>
+    <p>
+        • When receiving data from a web server, the data is always a string.<br>
+        • Parse the data with JSON.parse(), and the data becomes a JavaScript object.<br>
+        • Imagine we received this text from a web server<br>
+        <code>'{"name":"John", "age":30, "city":"New York"}'</code><br>
+        • Use the JavaScript function Jason.parse() to convert text into a JavaScript object:<br>
+        <code>var obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');</code><br>
+        • Use the JavaScript object in your page:<br>
+        <code>
+            *p id="demo"> */p>
+            *script>
+            document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+            */script>
+        </code>
+    </p>
+    <h3>JSON.stringify()</h3>
+    <p>
+        • When sending data to a web server, the data has to be a string.<br>
+        • Convert a JavaScript object into a string with JSON.stringify ().<br>
+        • Imagine we have this object in JavaScript:<br>
+        <code>var obj = {name:"John", age:30, city: "New York"};</code><br>
+        • Use the JavaScript function JSON.stringify () to convert it into a string.<br>
+        <code>var myJSON = JSON.stringify(obj);</code><br>
+        • It is also possible to stringify JavaScript arrays<br>
+        • Imagine we have this array in JavaScript:
+        <code>var arr = ["John", "Peter", "Sally", "Jane"];</code><br>
+        • Use the JavaScript function JSON.stringify () to convert it into a string.<br>
+        <code>var myJSON = JSON.stringify(arr);</code>
+    </p>
+    <h3>JSON Objects</h3>
+    <p>
+        Object Syntax<br>
+        • JSON objects are surrounded by curly braces {}.<br>
+        • JSON objects are written in key/value pairs.<br>
+        • Keys must be strings, and values must be a valid JSON data type (string, number, object, array,
+        boolean or null).<br>
+        • Keys and values are separated by a colon.<br>
+        • Each key/value pair is separated by a comma.<br>
+    </p>
+    <h3>Accessing Object Values</h3>
+    <p>
+        • You can access the object values by using dot (.) notation:<br>
+        <code>myObj = {"name":"John", "age":30, "car":null};</code><br>
+        <code>x = myObj.name;</code><br>
+        <p id="demo1"></p>
+        • You can also access the object values by using bracket ([]) notation:<br>
+        <code>myObj = {"name":"John", "age":30, "car":null};</code><br>
+        <code>x = myObj["name"];</code>
+        <p id="demo2"></p>
+    </p>
+    <script>
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+        document.getElementById("demo1").innerHTML = myObj.name;
+        document.getElementById("demo2").innerHTML = myObj["name"];
+    </script>
 </body>
 
 </html>
