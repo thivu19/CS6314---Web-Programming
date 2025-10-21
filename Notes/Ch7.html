@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 Notes</title>
+</head>
+
+<body>
+    <h3>AJAX</h3>
+    <p>Asynchronous JavaScript And XML<br>
+        • Read data from a web server - after the page has loaded<br>
+        • Update a web page without reloading the page<br>
+        • Send data to a web server<br>
+    </p>
+    <div id="demo1">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc1()">Change Content</button>
+    </div>
+
+    <script>
+        function loadDoc1() {
+            // Create a new XMLHttpRequest object
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("demo1").innerHTML =
+                    this.responseText;
+            }
+            // Configure it: GET-request for the URL /ajax_info.txt
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+        }
+    </script>
+    <h3>How AJAX Works</h3>
+    <p>
+        1. An event occurs in a web page (the page is loaded, a button is clicked)<br>
+        2. An XMLHttpRequest object is created by JavaScript<br>
+        3. The XMLHttpRequest object sends a request to a web server<br>
+        4. The server processes the request<br>
+        5. The server sends a response back to the web page<br>
+        6. The response is read by JavaScript<br>
+        7. Proper action (like page update) is performed by JavaScript<br>
+    </p>
+    <h3>AJAX - Send a Request To a Server</h3>
+    <p>
+        To send a request to a server, we use the open() and send() methods of the
+        XMLHttpRequest object:<br>
+        <code>
+            xhttp.open("GET", "ajax_info.txt", true);<br>
+            xhttp.send();
+        </code><br><br>
+        • GET or POST?<br>
+        • GET is simpler and faster than POST, and can be used in most cases.<br><br>
+        • However, always use POST requests when:<br>
+        • Update a file or database on the server<br>
+        • Sending a large amount of data to the server.<br>
+        • Sending user input<br>
+    </p>
+    <h3>POST Request</h3>
+    <p>
+        • To POST data like an HTML form, add an HTTP header with setRequestHeader().<br>
+        • Specify the data you want to send in the send() method
+    </p>
+
+    <button type="button" onclick="loadDoc2()">Request data</button>
+    <p id="demo2"></p>
+    <script>
+        function loadDoc2() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("demo2").innerHTML = this.responseText;
+            }
+            // Configure it: POST-request for the URL /demo_post2.asp
+            xhttp.open("POST", "demo_post2.asp");
+            // Set the request header
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // Send the request with the data
+            xhttp.send("fname=Henry&lname=Ford");
+        }
+    </script>
+    <h3>THe onreadystatechange Property</h3>
+    <p>
+        • With the XMLHttpRequest object you can define a function to
+        be executed when the request receives an answer.<br>
+        • The function is defined in the onreadystatechange
+        property of the XMLHttpRequest object<br>
+    </p>
+    <div id="demo3">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc3()">Change Content</button>
+    </div>
+    <script>
+        function loadDoc3() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo3").innerHTML = this.responseText;
+                }            
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+    <h3>AJAX - Server Response</h3>
+    <p>
+        • The onreadystatechange Property<br>
+        • The readyState property holds the status of the XMLHttpRequest.<br>
+        • The onreadystatechange property defines a function
+        to be executed when the readyState changes.<br>
+        • The status property and the statusText property holds
+        the status of the XMLHttpRequest object.<br>
+    </p>
+</body>
+
+</html>
