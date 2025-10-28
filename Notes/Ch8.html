@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8 Notes</title>
+</head>
+
+<body>
+    <h3>SQL</h3>
+    <p>Structured Query Language. Lets you access and manipulate databases.</p>
+    <h3>RDBMS</h3>
+    <p>Relational Database Management System. A database system that stores data in tables with rows and columns.</p>
+    <h3>SQL Syntax</h3>
+    <p>
+        Most of the actions you need to perform on a database are done with SQL statements.
+        The following SQL statements selects all the records in the "Customers" table
+        <code><br>
+            SELECT * FROM Customers;   
+        </code><br>
+        SQL Statements: Some of The Most Important SQL Commands<br>
+        • SELECT - extracts data from a database<br>
+        • UPDATE - updates data in a database<br>
+        • DELETE - deletes data from a database<br>
+        • INSERT INTO - inserts new data into a database<br>
+        • CREATE DATABASE - creates a new database<br>
+        • ALTER DATABASE - modifies a database<br>
+        • CREATE TABLE - creates a new table<br>
+        • ALTER TABLE - modifies a table<br>
+        • DROP TABLE - deletes a table<br>
+        • CREATE INDEX - creates an index (search key)<br>
+        • DROP INDEX - deletes an index<br>
+    </p>
+    <h3>SQL - SELECT Statement</h3>
+    <p>
+        The SELECT statement is used to select data from a database.<br>
+        The data returned is stored in a result table, called the result-set.<br><br>
+        Basic Syntax:<br>
+        <code>
+            SELECT column1, column2, ...<br>
+            FROM table_name;
+        </code><br><br>
+        To select all columns from a table, use the asterisk (*):<br>
+        <code>
+            SELECT * FROM table_name;
+        </code>
+    </p>
+    <h3>SQL - WHERE Clause</h3>
+    <p>
+        The WHERE clause is used to filter records.<br>
+        It is used to extract only those records that fulfill a specified condition.<br><br>
+        Basic Syntax:<br>
+        <code>
+            SELECT column1, column2, ...<br>
+            FROM table_name<br>
+            WHERE condition;
+        </code><br><br>
+        Example:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country='Mexico';
+        </code>
+    </p>
+    <h3>SQL - AND, OR, and NOT Clause</h3>
+    <p>
+        The AND, OR and NOT operators are used to filter records based on more than one condition.<br><br>
+        Example - AND:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country='Germany' AND City='Berlin';
+        </code><br><br>
+        Example - OR:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country='Germany' OR Country='Switzerland';
+        </code><br><br>
+        Example - NOT:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE NOT Country='Germany';
+        </code><br><br>
+        Example - AND, OR, NOT:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country='Germany' AND (City='Berlin' OR City='München');
+        </code>
+    </p>
+    <h3>SQL - ORDER BY Keyword</h3>
+    <p>
+        The ORDER BY keyword is used to sort the result-set in ascending or descending order.<br><br>
+        Basic Syntax:<br>
+        <code>
+            SELECT column1, column2, ...<br>
+            FROM table_name<br>
+            ORDER BY column1, column2, ... ASC|DESC;
+        </code><br><br>
+        Example - Ascending Order:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            ORDER BY Country ASC;
+        </code><br><br>
+        Example - Descending Order:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            ORDER BY Country DESC;
+        </code>
+    </p>
+    <h3>SQL - INSERT INTO Statement</h3>
+    <p>
+        The INSERT INTO statement is used to insert new records in a table.<br><br>
+        Basic Syntax:<br>
+        <code>
+            INSERT INTO table_name (column1, column2, column3, ...)<br>
+            VALUES (value1, value2, value3, ...);
+        </code><br><br>
+        Example:<br>
+        <code>
+            INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)<br>
+            VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+        </code><br><br>
+        Example - Insert Into All Columns:<br>
+        <code>
+            INSERT INTO Customers<br>
+            VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+        </code><br><br>
+        Example - Insert Data Only in Specified Columns:<br>
+        <code>
+            INSERT INTO Customers (CustomerName, City)<br>
+            VALUES ('Cardinal', 'Stavanger');
+        </code>
+    </p>
+    <h3>SQL - NULL Values</h3>
+    <p>
+        A NULL value is a field with no value.<br>
+        The field can be left blank when you insert a new record.<br><br>
+        Example - Insert NULL Values:<br>
+        <code>
+            INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)<br>
+            VALUES ('Cardinal', NULL, 'Skagen 21', 'Stavanger', '4006', 'Norway');
+        </code><br><br>
+        Example - Search for NULL Values:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE PostalCode IS NULL;
+        </code><br><br>
+        Example - Search for NOT NULL Values:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE PostalCode IS NOT NULL;
+        </code>
+    </p>
+    <h3>SQL - UPDATE Statement</h3>
+    <p>
+        The UPDATE statement is used to modify the existing records in a table.<br><br>
+        Basic Syntax:<br>
+        <code>
+            UPDATE table_name<br>
+            SET column1 = value1, column2 = value2, ...<br>
+            WHERE condition;
+        </code><br><br>
+        Example:<br>
+        <code>
+            UPDATE Customers<br>
+            SET ContactName = 'Alfred Schmidt', City = 'Hamburg'<br>
+            WHERE CustomerID = 1;
+        </code><br><br>
+        Example - Update Multiple Records:<br>
+        <code>
+            UPDATE Customers<br>
+            SET ContactName = 'Juan Perez', City = 'Mexico City'<br>
+            WHERE Country = 'Mexico';
+        </code>
+    </p>
+    <h3>SQL - DELETE Statement</h3>
+    <p>
+        The DELETE statement is used to delete existing records in a table.<br><br>
+        Basic Syntax:<br>
+        <code>
+            DELETE FROM table_name<br>
+            WHERE condition;
+        </code><br><br>
+        Example:<br>
+        <code>
+            DELETE FROM Customers<br>
+            WHERE CustomerID = 3;
+        </code><br><br>
+        Example - Delete All Records:<br>
+        <code>
+            DELETE FROM Customers;
+        </code><br>
+        Note: The DELETE statement without a WHERE clause will delete all records in the table.
+    </p>
+    <h3>SQL - MIN() and MAX() Functions</h3>
+    <p>
+        The MIN() and MAX() functions return the smallest and largest value of the selected column.<br><br>
+        Example - MIN():<br>
+        <code>
+            SELECT MIN(Price) AS LowestPrice<br>
+            FROM Products;
+        </code><br><br>
+        Example - MAX():<br>
+        <code>
+            SELECT MAX(Price) AS HighestPrice<br>
+            FROM Products;
+        </code>
+    </p>
+    <h3>SQL - COUNT() Function</h3>
+    <p>
+        The COUNT() function returns the number of rows that matches a specified criterion.<br><br>
+        Example - COUNT():<br>
+        <code>
+            SELECT COUNT(CustomerID) AS NumberOfCustomers<br>
+            FROM Customers<br>
+            WHERE Country = 'Germany';
+        </code> 
+    </p>
+    <h3>SQL - AVG() and SUM() Functions</h3>
+    <p>
+        The AVG() function returns the average value of a numeric column.<br>
+        The SUM() function returns the total sum of a numeric column.<br><br>
+        Example - AVG():<br>
+        <code>
+            SELECT AVG(Price) AS AveragePrice<br>
+            FROM Products;
+        </code><br><br>
+        Example - SUM():<br>
+        <code>
+            SELECT SUM(Price) AS TotalPrice<br>
+            FROM Products;
+        </code>
+    </p>
+</body>
+
+</html>
