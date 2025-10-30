@@ -193,7 +193,7 @@
     </p>
     <h3>SQL - MIN() and MAX() Functions</h3>
     <p>
-        The MIN() and MAX() functions return the smallest and largest value of the selected column.<br><br>
+        The MIN() and MAX() functions return the smallest and largest value of the selected column. (Only for #)<br><br>
         Example - MIN():<br>
         <code>
             SELECT MIN(Price) AS LowestPrice<br>
@@ -228,6 +228,73 @@
         <code>
             SELECT SUM(Price) AS TotalPrice<br>
             FROM Products;
+        </code>
+    </p>
+    <h3>SQL - LIKE Operator</h3>
+    <p>
+        The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.<br><br>
+        Wildcards:<br>
+        • % - Represents zero or more characters<br>
+        • _ - Represents a single character<br><br>
+        Example - Using % Wildcard:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE CustomerName LIKE 'a%';
+        </code><br><br>
+        Example - Using _ Wildcard:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE CustomerName LIKE '_r%';
+        </code>
+    </p>
+    <h3>SQL - IN Operator</h3>
+    <p>
+        The IN operator allows you to specify multiple values in a WHERE clause.<br><br>
+        Example - Using IN Operator:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country IN ('Germany', 'France', 'UK');
+        </code><br><br>
+        Example - Using NOT IN Operator:<br>
+        <code>
+            SELECT * FROM Customers<br>
+            WHERE Country NOT IN ('Germany', 'France', 'UK');
+        </code>
+    </p>
+    <h3>SQL - BETWEEN Operator</h3>
+    <p>
+        The BETWEEN operator selects values within a given range. (Only with #)<br><br>
+        Example - Using BETWEEN Operator:<br>
+        <code>
+            SELECT * FROM Products<br>
+            WHERE Price BETWEEN 10 AND 20;
+        </code><br><br>
+        Example - Using NOT BETWEEN Operator:<br>
+        <code>
+            SELECT * FROM Products<br>
+            WHERE Price NOT BETWEEN 10 AND 20;
+        </code>
+    </p>
+    <h3>SQL -JOIN Operator</h3>
+    <p>
+        The JOIN clause is used to combine rows from two or more tables, based on a related column between them.<br><br>
+        Example - INNER JOIN:<br>
+        <code>
+            SELECT Orders.OrderID, Customers.CustomerName<br>
+            FROM Orders<br>
+            INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+        </code><br><br>
+        Example - LEFT JOIN:<br>
+        <code>
+            SELECT Customers.CustomerName, Orders.OrderID<br>
+            FROM Customers<br>
+            LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+        </code><br><br>
+        Example - RIGHT JOIN:<br>
+        <code>
+            SELECT Orders.OrderID, Customers.CustomerName<br>
+            FROM Orders<br>
+            RIGHT JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
         </code>
     </p>
 </body>
