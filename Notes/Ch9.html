@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9 Notes</title>
+</head>
+
+<body>
+    <h3>PHP</h3>
+    <p>
+        PHP files can contain text, HTML, CSS, JavaScript, and PHP code.
+        PHP code are executed on the server, and the result is returned to the browser as
+        plain HTML. PHP can generate dynamic page content and can create, open, read, write,
+        delete, and close files on the server. It can also collect form data, send and receive
+        cookies. PHP can add, delete, modify data in your database. It is also
+        used to control user-access and encrypt the data.
+    </p>
+    <h3>Syntax</h3>
+    <p>
+        A PHP script is executed on the server, and the plain HTML result is sent back to the
+        browser. A PHP script starts with
+        <?php and ends with ?>: <br>
+        <code>
+            <?php<br>
+            // PHP code goes here<br>
+            ?>
+        </code>
+    </p>
+    <h3>Variables</h3>
+    <p>In PHP, a variable starts with the $ sign, followed by the name of the variable:</p>
+    <code>
+        <?php<br>
+        $txt = "Hello world!";<br>
+        $x = 5;<br>
+        $y = 10.5;<br>
+        ?>
+    </code>
+    <p>
+        When you assign a text value to a variable, put quotes around the value.
+        PHP has no command for declaring a variable. It is created the moment you first assign a value to it
+    </p>
+    <h3>Echo</h3>
+    <p>
+        The PHP echo statement is often used to output data to the screen.
+        The following examples will show how to output text and a variable
+    </p>
+    <code>
+        <?php<br>
+        $txt = "Apples";<br>
+        echo "I love " . $txt . "!";<br>
+        $x = 5;<br>
+        $y = 10.5;<br>
+        echo $x + $y;<br>
+        ?>
+    </code>
+    <h3>Global</h3>
+    <p>
+        Global Scope: A variable declared outside a function has a
+        GLOBAL SCOPE and <strong>can only be accessed outside a function</strong>:
+    </p>
+    <code>
+        <?php<br>
+        $x = 5; // global scope<br><br>
+        function myTest() {<br>
+            // using x inside this function will generate an error<br>
+            echo "p> Variable x inside function is: $x /p>";<br>
+        }<br>
+        myTest();<br>
+        echo "p>Variable x inside function is: $x /p>";<br>
+        ?>
+    </code>
+    <p>
+        The global keyword is used to access a global variable
+        from within a function.<br>
+        Use the global keyword before the variables (inside the function)
+    </p>
+    <code>
+        <?php<br>
+        $x = 5; // global scope<br>
+        $x = 10; // global scope<br><br>
+        function myTest() {<br>
+            global $x, $y;<br>
+            $y = $x + $y;<br>
+        }<br>
+        myTest();<br>
+        echo $y; // outputs 15<br>
+    </code>
+    <h3>Local</h3>
+    <p>
+        Local Scope: A variable declared within a function has a LOCAL
+        SCOPE and can only be accessed within that function:
+    </p>
+    <code>
+        <?php<br>
+        function myTest() {<br>
+            $x = 5; // local scope<br>
+            echo "p>Variable x inside function is: $x /p>";<br>
+        }<br>
+        myTest();<br>
+
+        // using x outside the function will generate an error<br>
+        echo "p>Variable x inside function is: $x /p>";<br>
+        ?>
+    </code>
+    <h3>Global Array</h3>
+    <p>
+        PHP also stores all global variables in an array called
+        $GLOBALS[index].
+        The index holds the name of the variable.
+        This array is also accessible from within functions and can be used to
+        update global variables directly.
+    </p>
+    <code>
+        <?php<br>
+        $x = 5; // global scope<br>
+        $x = 10; // global scope<br><br>
+        function myTest() {<br>
+            $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];<br>
+        }<br>
+        myTest();<br>
+        echo $y; // outputs 15<br>
+        ?>
+    </code>
+    <h3>Static</h3>
+    <p>
+        Sometimes we want a local variable NOT to be deleted
+        after execution of a function.
+        Use the static keyword when you first declare the variable
+    </p>
+    <code>
+        <?php<br>
+        function myTest() {<br>
+            static $x = 0;<br>
+            echo $x;<br>
+            $x++;<br>
+        }<br>
+        myTest(); // output 0<br>
+        echo "br>";<br>
+        myTest(); // output 1<br>
+        echo "br>";<br>
+        myTest(); // output 2<br>
+        ?>
+    </code>
+    <h3>Echo & Print Statements</h3>
+    <p>
+        They are both used to output data to the screen.<br>
+        • echo has no return value while print has a return
+        value of 1 so it can be used in expressions.<br>
+        • echo can take multiple parameters (although such
+        usage is rare) while print can take one argument.<br>
+        • Echo is marginally faster than print.<br>
+        • The echo statement can be used with or without
+        parentheses: echo or echo(). 
+    </p>
+    <code>
+        <?php<br>
+        echo "h2>PHP is Fun!/h2>";<br>
+        echo "Hello world! br>";<br>
+        echo "I'm about to learn PHP! br>";<br>
+        echo "This ", "string ", "was ", "made ", "with multiple parameters.";<br>
+        ?>
+    </code>
+    <p>
+        This example shows how to output text and variables with the echo statement: 
+    </p>
+    <code>
+        <?php<br>
+        $txt1 =  "Learn PHP";<br>
+        $txt2 =  "W3Schools.com";<br>
+        $x = 5;<br>
+        $y = 4;<br>
+
+        echo "h2>" . $txt1 . "/h2>";<br>
+        echo "Study PHP at" . $txt2 . "br>";<br>
+        echo $x + $y;<br>
+        ?>
+    </code>
+    <p>
+        The print statement can be used with or without parentheses: print or print()
+    </p>
+    <code>
+        <?php<br>
+        print "h2> PHP is Fun! /h2>";<br>
+        print "Hello world! br>";<br>
+        print "I'm about to learn PHP!";<br>
+        ?>
+    </code>
+    <p>
+        This example shows how to output text and variables with the print statement
+    </p>
+    <code>
+        <?php<br>
+        $txt1 =  "Learn PHP";<br>
+        $txt2 =  "W3Schools.com";<br>
+        $x = 5;<br>
+        $y = 4;<br>
+
+        print "h2>" . $txt1 . "/h2>";<br>
+        print "Study PHP at" . $txt2 . "br>";<br>
+        print $x + $y;<br>
+        ?>
+    </code>
+    <h3>Data Types</h3>
+    <p>
+        Variables can store data of different types, and different data types can do different things. 
+        PHP supports the following data types: String, Integer, Float, Boolean, Array, Object, & NULL
+    </p>
+    <p>
+        In the following example of integer and float. The PHP var_dump() function returns the data type and value.
+    </p>
+    <code>
+        <?php<br>
+        $x = 5;<br>
+        var_dump($x); // output int(5)<br>
+        $y = 10.365;<br>
+        var_dump($y); // output float(10.365)<br>
+        ?>
+    </code>
+    <p>
+        A Boolean represents two possible states: TRUE or FALSE.
+    </p>
+    <code>
+        <?php<br>
+        $x = true;<br>
+        $y = false;<br>
+        ?>
+    </code>
+</body>
+
+</html>
